@@ -81,11 +81,23 @@
 /* 邮箱输入框 */
 .input_email{
     position: absolute;
-    top: 260px;
+    top:220px;
     left: 60px;
+    /*background-color: red;*/
+    /*height: 30px;*/
+}
+.input_email img{
+    position: absolute;
+    top: -2px;
+
+}
+.input_email input{
     width: 200px;
     height: 30px;
     border-radius: 8px;
+    padding: 0 10px;
+    margin-left: 40px;
+    border: none;
 }
 /* 密码字样 */
 .password{
@@ -96,11 +108,23 @@
 /* 密码输入框 */
 .input_password{
     position: absolute;
-    top: 370px;
+    top: 290px;
     left: 60px;
+
+}
+.input_password img{
+    position: absolute;
+    top: -2px;
+
+}
+/*设置密码框样式*/
+.input_password input{
     width: 200px;
     height: 30px;
     border-radius: 8px;
+    padding: 0 10px;
+    border: none;
+    margin-left: 40px;
 }
 /* login底部提示文本 */
 .tips{
@@ -126,8 +150,8 @@ a{
 /* 登陆按钮 */
 .login_btn{
     position: absolute;
-    top: 449px;
-    left: 59px;
+    top: 399px;
+    left: 109px;
     width: 200px;
     height: 30px;
     text-align: center;
@@ -135,16 +159,15 @@ a{
     border: 1px solid red;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 1px 1px #000;
 }
 .login_btn>a{
     color: #000;
 }
 /* 输入框聚焦样式 */
-input:focus{
-    border: 0px;
-    outline: 2px solid #EC4B41;
-    box-shadow: 3px 3px 3px 3px #ccc;
+input:focus,input:hover{
+    border: none;
+    outline:none;
+    box-shadow: 0 5px  8px rgba(0,0,0,0.4);
 }
 /* 进入登陆栏   登陆栏样式 */
 .login:hover{
