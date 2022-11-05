@@ -9,10 +9,11 @@
     active-text-color="#ffd04b">
     <el-menu-item>欢迎来到易书</el-menu-item>
     <el-menu-item index="1" class="top-one"><a href="javascript:;" target="_blank" class="all-line">首页</a></el-menu-item>
-    <el-menu-item index="2" class="top-two"><a href="javascript:;" target="_blank" class="all-line">全部商品</a></el-menu-item>
+    <el-menu-item index="2" class="top-two"><a href="javascript:;" target="_blank" class="all-line">书海</a></el-menu-item>
     <el-menu-item index="3" class="top-three"><a href="javascript:;" target="_blank" class="all-line">发布</a></el-menu-item>
-    <el-menu-item index="4" class="top-four"><a href="javascript:;" target="_blank" class="all-line">购物车</a></el-menu-item>
+    <el-menu-item index="4" class="top-four"><a href="javascript:;" target="_blank" class="all-line">书单</a></el-menu-item>
     <el-menu-item index="5" class="top-right"><a href="javascript:;" target="_blank" class="all-line">用户中心</a></el-menu-item>
+    <el-menu-item index="6" class="top-right"><a href="javascript:;" target="_blank" class="all-line">退出</a></el-menu-item>
   </el-menu>
 </template>
 
@@ -52,7 +53,7 @@ export default {
     left: 540px;
   }
  .top-right{
-  left: 740px;
+  left: 680px;
  }
 
 </style>

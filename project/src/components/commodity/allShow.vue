@@ -1,6 +1,13 @@
 <template>
-  <div class="business">
-    <div class="business-one">
+  <div class="allShow">
+    <div class="allShow-one">
+      <div>
+        <img src="../../img/redmi10A.png" alt="">
+        <h3>书名: {{book.name}}</h3>
+        <p>作者: {{book.author}}</p>
+        <p style="color:#ffd04b">价格: {{book.price}} 元 </p>
+        <el-button type="success" plain class="allshow-button">加入书单</el-button>
+      </div>
       <div>
         <img src="../../img/redmi10A.png" alt="">
         <h3>书名: {{book.name}}</h3>
@@ -28,7 +35,7 @@
 
 <script>
   export default {
-    name:'Business',
+    name:'AllShow',
     data(){
       return{
         book:{
@@ -41,11 +48,11 @@
   }
 </script>
 <style  scoped lang="less"> 
-.business{
-  width: 900px;
+.allShow{
+  width: 1200px;
   // height: 400px;
-    .business-one{
-      margin-top: 60px;
+    .allShow-one{
+    margin-top: 60px;
     display: flex;
     flex-direction: row;
     // background-color: red;

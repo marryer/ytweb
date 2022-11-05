@@ -5,7 +5,7 @@
     <div style="margin: 20px 0">
       <el-button type="success">登录</el-button>
       <el-button type="success" plain>注册</el-button>
-</div>
+    </div>
   </div>
 </template>
 
