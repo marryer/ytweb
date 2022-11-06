@@ -6,6 +6,7 @@
         <el-form-item label="书名：">
             <el-input v-model="name" placeholder="请输入书名" class="input_style"></el-input>
         </el-form-item>
+        <br>
         <!-- 上传书籍照片 -->
         <el-upload
             class="upload-demo"
@@ -21,6 +22,7 @@
             <el-button size="small" type="primary">点击上传</el-button>
             <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb,且至多只能上传四张图片</div>
             </el-upload>
+            <br>
         <!-- 年级 -->
         <el-form-item label="书籍所用年级">
             <el-select v-model="form.region" placeholder="请选择年级">
@@ -30,6 +32,7 @@
                 <el-option label="大四" value="4"></el-option>
             </el-select>
         </el-form-item>
+        <br>
         <!-- 交易地点 -->
         <el-form-item label="交易地点">
             <el-radio-group v-model="form.address">
@@ -40,7 +43,7 @@
         </el-form-item>
         <!-- 书籍详情 -->
         <el-form-item label="书籍详情">
-            <el-input type="textarea" v-model="form.area"></el-input>
+            <el-input type="textarea" v-model="form.area" cols="70" rows="10"></el-input>
         </el-form-item>
         <!-- 表单结束 -->
         <el-form-item>
@@ -89,8 +92,9 @@ export default {
 <style>
 .box1{
     position: relative;
-    top: -40px;
-    left: 300px;
+    top: -50%;
+    left: 50%;
+    margin-left:-350px;
     width: 700px;
     height: 600px;
     background-color: #EDEDED;

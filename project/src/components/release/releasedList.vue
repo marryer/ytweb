@@ -40,7 +40,7 @@ export default {
     background-color: #EDEDED;
 }
 .infinite-list{
-    height: 800px;
+    height: 600px;
 }
 .infinite-list-item{
     height: 60px;
