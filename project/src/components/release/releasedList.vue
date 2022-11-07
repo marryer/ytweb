@@ -1,7 +1,7 @@
 <template>
    <div class="box">
     <div class="infinite-list" v-infinite-scroll="load" style="overflow: scroll;">
-        <div v-for="(i,z) in count" class="infinite-list-item" :key="z" >{{ i }}</div>
+        <div v-for="(i,z) in count" class="infinite-list-item" :key="z" >发布历史：{{ i }}</div>
     </div>
    </div>
 </template>

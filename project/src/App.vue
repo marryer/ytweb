@@ -5,13 +5,13 @@
     <!-- 购物车 -->
     <shoppingCar v-show="false" ></shoppingCar>
     <!-- 发布商品 -->
-    <release v-show="false" ></release>
+    <release v-show="true" ></release>
     <!-- 全部商品展示 -->
     <commodity v-show="false" ></commodity>
     <!-- 用户中心 -->
     <user v-show="false"></user>
     <!-- 退出 -->
-    <exit v-show="true"></exit>
+    <exit v-show="false"></exit>
 
   </div>
 </template>
