@@ -5,7 +5,7 @@
         <!-- 发布按钮 -->
         <releaseBtn></releaseBtn>
         <!-- 已经发布商品列表 -->
-        <releasedList @click="showH"></releasedList>
+        <releasedList></releasedList>
         <!-- 商品上传页面 -->
         <releasePage v-show="flag"></releasePage>
         
@@ -21,7 +21,12 @@ import releasePage from './release/releasePage.vue'
 
 export default {
     name:'Release',
-    components:{top,releaseBtn,releasedList,releasePage},
+    components:{
+        top,
+        releaseBtn,
+        releasedList,
+        releasePage,
+    },
     data(){
         return{
             flag:true,

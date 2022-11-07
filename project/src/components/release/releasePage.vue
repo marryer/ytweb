@@ -4,7 +4,7 @@
     <el-form ref="form" :model="form" label-width="100px">
         <!-- 书名 -->
         <el-form-item label="书名：" :class="bookName">
-            <el-input v-model="name" placeholder="请输入书名" :class="[inputStyle,inputFocus]"></el-input>
+            <el-input v-model="form.bookName" placeholder="请输入书名" :class="[inputStyle,inputFocus]"></el-input>
         </el-form-item>
         <br>
         <!-- 上传书籍照片 -->
@@ -61,7 +61,7 @@ export default {
     data(){
         return {
             form:{
-                name:'',
+                bookName:'',
                 regin:'',
                 address:'',
                 area:'',
