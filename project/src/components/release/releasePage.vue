@@ -6,7 +6,14 @@
         <el-form-item label="书名：" :class="bookName">
             <el-input v-model="form.bookName" placeholder="请输入书名" :class="[inputStyle,inputFocus]"></el-input>
         </el-form-item>
-        <br>
+        <!-- 作者 -->
+        <el-form-item label="作者：" :class="bookAuthor">
+            <el-input v-model="form.bookAuthor" placeholder="请输入作者" :class="[inputStyle,inputFocus]"></el-input>
+        </el-form-item>
+        <el-form-item label="价格" :class="priceBox">
+            <el-input-number v-model="form.price" @change="handleChange" :min="0" :max="100" label="价格"></el-input-number>
+        </el-form-item>
+            <br>
         <!-- 上传书籍照片 -->
         <el-upload
             class="upload-demo"
@@ -20,13 +27,14 @@
             :file-list="fileList"
             :class="imgBox">
             书籍图片：
-            <el-button size="small" type="primary" :class="successBtn">点击上传</el-button>
+            <el-button size="small" type="success" :class="successBtn">点击上传</el-button>
             <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb,且至多只能上传四张图片</div>
             </el-upload>
             <br>
         <!-- 年级 -->
         <el-form-item label="书籍所用年级" :class="selectBox">
             <el-select v-model="form.region" placeholder="请选择年级">
+                <el-option label="请选择年级" value="0"></el-option>
                 <el-option label="大一" value="1"></el-option>
                 <el-option label="大二" value="2"></el-option>
                 <el-option label="大三" value="3"></el-option>
@@ -48,7 +56,7 @@
         </el-form-item>
         <!-- 表单结束 -->
         <el-form-item :class="submitBox">
-            <el-button type="primary" @click="onSubmit" :class="successBtn">立即发布</el-button>
+            <el-button type="success" @click="onSubmit" :class="successBtn">立即发布</el-button>
             <el-button>取消</el-button>
         </el-form-item>
     </el-form>
@@ -62,6 +70,8 @@ export default {
         return {
             form:{
                 bookName:'',
+                bookAuthor:'',
+                price:'',
                 regin:'',
                 address:'',
                 area:'',
@@ -69,6 +79,8 @@ export default {
             fileList:[],
             bookName:'book_name',
             inputStyle:'input_style',
+            bookAuthor:'book_author',
+            priceBox:'price_box',
             imgBox:'img_box',
             selectBox:'select_box',
             radioBox:'radio_box',
@@ -118,16 +130,26 @@ export default {
     margin-left: 20px;
     width:60%;
 }
-.book_name{
+.book_name,.book_author{
     position: absolute;
     top:5%;
-    margin-left: -18px;
+    margin-left: -30px;
     font-size:40px;
     font-weight: 700;
 }
+.book_author{
+    position: absolute;
+    top: 5%;
+    left: 30%;
+}
+.price_box{
+    position: absolute;
+    top: 5%;
+    right: 10px;
+}
 .img_box{
     position: absolute;
-    top: 16%;
+    top: 15%;
     left: 20px;
 }
 .select_box{
