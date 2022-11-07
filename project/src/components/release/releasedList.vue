@@ -34,7 +34,7 @@ export default {
 <style>
 .box{
     position:absolute;
-    top:200px;
+    top:280px;
     left:30px;
     width: 200px;
     background-color: #EDEDED;

@@ -1,7 +1,8 @@
 <template>
   <div>
     <el-row :class="[rBtn]">
-        <el-button type="success" :class="btn">发布</el-button>
+        <el-button type="success" :class="btn1">发布</el-button>
+        <el-button type="success" :class="btn2">发布历史</el-button>
     </el-row>
   </div>
 </template>
@@ -12,7 +13,8 @@ export default {
   data(){
     return{
       rBtn:'r_btn',
-      btn:'btn',
+      btn1:'btn1',
+      btn2:'btn2',
     }
   }
 }
@@ -26,7 +28,14 @@ export default {
   top:40px;
   left: 20px;
 }
-.btn{
+.btn1{
+  width: 200px;
+  height: 60px;
+}
+.btn2{
+  position: absolute;
+  top: 100px;
+  left: -10px;
   width: 200px;
   height: 60px;
 }
