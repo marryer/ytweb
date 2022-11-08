@@ -20,11 +20,16 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* 发布按钮样式 */
 .r_btn{
   /* 发布按钮位置 */
   position: absolute;
+  top:60px;
+  left: 60px;
+  /* 发布按钮大小 */
+  display: inline-block;
+  font-size:60px;
   top:40px;
   left: 20px;
 }
@@ -40,4 +45,3 @@ export default {
   height: 60px;
 }
 </style>
-发布页面

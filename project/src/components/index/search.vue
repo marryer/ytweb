@@ -110,7 +110,6 @@
   /* 设置搜索框的大小 */
   .middle-input{
     width: 600px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
   }
   /* 设置搜索框的搜索按钮 */
   .search-box{

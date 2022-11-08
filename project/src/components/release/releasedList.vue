@@ -31,9 +31,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .box{
     position:absolute;
+    top:160px;
     top:280px;
     left:30px;
     width: 200px;

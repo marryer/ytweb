@@ -1,7 +1,7 @@
 <template>
   <div class="box1">
     <!-- 表单 -->
-    <el-form ref="form" :model="form" label-width="100px">
+    <el-form ref="form" :model="form" label-width="100px" class="release-page">
         <!-- 书名 -->
         <el-form-item label="书名：" :class="bookName">
             <el-input v-model="form.bookName" placeholder="请输入书名" :class="[inputStyle,inputFocus]"></el-input>
@@ -114,13 +114,16 @@ export default {
 <style scoped>
 .box1{
     position: relative;
+    top: 150px;
+    left: 300px;
     top: 50%;
     left: 50%;
     margin-left:-350px;
     width: 700px;
     height: 600px;
+    /* margin-top: 40px; */
     background-color: #EDEDED;
-    
+    padding-left: 40px;
 }
 .box1:hover{
     border: 1px solid rgba(227, 227, 227, 0.863);

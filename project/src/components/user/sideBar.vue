@@ -3,16 +3,17 @@
     <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
       <el-menu :default-openeds="['1', '3']">
         <el-submenu index="1">
-          <template slot="title"><i class="el-icon-document"></i>基本信息</template>
+          <!-- router-link 路由切换 -->
+          <template slot="title"><i class="el-icon-document"></i> <router-link to="basicShow">基本信息</router-link></template>
         </el-submenu>
         <el-submenu index="2">
-          <template slot="title"><i class="el-icon-refresh"></i>修改密码</template>
+          <template slot="title"><i class="el-icon-refresh"></i> <router-link to="updatePwd">修改密码</router-link></template>
         </el-submenu>
         <el-submenu index="3">
-          <template slot="title"><i class="el-icon-sold-out"></i>下架书籍</template>
+          <template slot="title"><i class="el-icon-sold-out"></i><router-link to="soldOut">下架书籍</router-link></template>
         </el-submenu>
         <el-submenu index="4">
-          <template slot="title"><i class="el-icon-setting"></i>历史订单</template>
+          <template slot="title"><i class="el-icon-setting"></i> <router-link to="orderHistroy">订单历史</router-link> </template>
         </el-submenu>
       </el-menu>
     </el-aside>
@@ -28,6 +29,7 @@
 <style scoped>
 .sideBar{
   /* margin-top: 20px; */
+  display: block;
   box-shadow: 0 0 2px rgba(0, 0, 0, .2);
 }
   .el-header {
@@ -38,5 +40,9 @@
   
   .el-aside {
     color: #333;
+  }
+  a{
+    text-decoration: none;
+    color: #8b8b8bea;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="headerTop">购物车（全部{{index}}）</div>
+  <div class="headerTop">书单（全部{{index}}）</div>
 </template>
 
 <script>
@@ -19,7 +19,8 @@
     height: 45px;
     line-height: 45px;
     margin :0 auto;
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    /* margin-bottom: 20px; */
     border: 1px solid rgba(227, 227, 227, 0.863);
     /* box-shadow: 0 0 2px rgba(0, 0, 0, .2); */
     border-top-left-radius: 10px;

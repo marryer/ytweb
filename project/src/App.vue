@@ -1,18 +1,24 @@
 <template>
   <div>
-    <!-- 首页 -->
-    <index v-show="false" ></index>
-    <!-- 购物车 -->
-    <shoppingCar v-show="false" ></shoppingCar>
+    <!-- <router-link to="/index">index</router-link> -->
+    <!-- <router-link to="/user">user</router-link> -->
+    <!-- 首页 --> 
+    <!-- <index></index> -->
     <!-- 发布商品 -->
-    <release v-show="true" ></release>
+    <!-- <release></release> -->
+    <!-- 购物车 -->
+    <!-- <shoppingCar></shoppingCar> -->
+    <!-- <release v-show="true" ></release> -->
     <!-- 全部商品展示 -->
-    <commodity v-show="false" ></commodity>
+    <!-- <commodity></commodity> -->
     <!-- 用户中心 -->
-    <user v-show="false"></user>
-    <!-- 退出 -->
-    <exit v-show="false"></exit>
 
+    <!-- <user></user> -->
+    <!-- 指定组件呈现的位置 -->
+    <router-view></router-view>
+    <!-- <user v-show="false"></user> -->
+    <!-- 退出 -->
+    <!-- <exit v-show="false"></exit> -->
   </div>
 </template>
 
@@ -34,6 +40,5 @@ export default {
     exit
   },
 }
-
 </script>
 

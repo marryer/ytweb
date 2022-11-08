@@ -3,11 +3,9 @@
     <!-- 顶部导航条 -->
     <top></top>
     <!-- 侧边栏 -->
-    <sideBar></sideBar>
-    <basicShow v-show="true"></basicShow>
-    <updatePassword v-show="false"></updatePassword>
-    <soldOut v-show="false"></soldOut>
-    <orderHistroy v-show="false"></orderHistroy>
+    <sideBar/>
+    <!-- 路由切换展示视图 -->
+    <router-view></router-view>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 顶部导航栏 -->
-    <top></top>
+    <top class="shopping-top"></top>
     <!-- 商品订单列表 -->
     <shoppingCarList></shoppingCarList>
     <!-- 商品底部 -->
@@ -23,6 +23,10 @@
   }
 </script>
 
-<style>
+<style scoped>
+.shopping-top{
+  /* margin-top: -30px; */
+}
+
 
 </style>
