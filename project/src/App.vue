@@ -3,22 +3,22 @@
     <!-- <router-link to="/index">index</router-link> -->
     <!-- <router-link to="/user">user</router-link> -->
     <!-- 首页 --> 
-    <!-- <index></index> -->
+    <index v-show="false"></index>
     <!-- 发布商品 -->
-    <!-- <release></release> -->
+    <release v-show="false"></release>
     <!-- 购物车 -->
-    <!-- <shoppingCar></shoppingCar> -->
-    <!-- <release v-show="true" ></release> -->
+    <shoppingCar v-show="false"></shoppingCar>
+    <release v-show="false" ></release>
     <!-- 全部商品展示 -->
-    <!-- <commodity></commodity> -->
+    <commodity v-show="true"></commodity>
     <!-- 用户中心 -->
 
-    <!-- <user></user> -->
+    <user v-show="false"></user>
     <!-- 指定组件呈现的位置 -->
-    <router-view></router-view>
-    <!-- <user v-show="false"></user> -->
+    <!-- <router-view></router-view> -->
+    <user v-show="false"></user> 
     <!-- 退出 -->
-    <!-- <exit v-show="false"></exit> -->
+    <exit v-show="false"></exit>
   </div>
 </template>
 

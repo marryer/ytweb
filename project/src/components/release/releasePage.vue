@@ -1,5 +1,5 @@
 <template>
-  <div class="box1">
+  <div :class="box1">
     <!-- 表单 -->
     <el-form ref="form" :model="form" label-width="100px" class="release-page">
         <!-- 书名 -->
@@ -76,6 +76,7 @@ export default {
                 address:'',
                 area:'',
             },
+            box1:'box1',
             fileList:[],
             bookName:'book_name',
             inputStyle:'input_style',
@@ -113,12 +114,12 @@ export default {
 
 <style scoped>
 .box1{
-    position: relative;
-    top: 150px;
+    position: fixed;
+    margin-top: -260px;
     left: 300px;
     top: 50%;
     left: 50%;
-    margin-left:-350px;
+    margin-left:-600px;
     width: 700px;
     height: 600px;
     /* margin-top: 40px; */
