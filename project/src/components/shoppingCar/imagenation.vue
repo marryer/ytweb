@@ -23,6 +23,7 @@
     border: 1px solid rgba(227, 227, 227, 0.863);
     border-top: none;
     border-bottom: none;
+    margin-top: 55px;
     // box-shadow: 0 0 2px rgba(0, 0, 0, .2);
     .imagenation-one{
       display: inline-block;

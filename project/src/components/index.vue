@@ -10,8 +10,8 @@
     <logo></logo>
     <!-- 一部分商品展示 -->
     <business></business>
-    <business></business>
-    <business></business>
+    <!-- <business></business> -->
+    <!-- <business></business> -->
     <!-- 广告栏 -->
     <ad></ad>
     <!-- 查看更多，会跳转到全部商品页面 -->

@@ -1,12 +1,12 @@
 <template>
   <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm updatePassword">
-    <el-form-item label="修改密码" prop="pass">
+    <el-form-item label="输入原密码" prop="pass">
       <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
     </el-form-item>
-    <el-form-item label="确认密码" prop="checkPass">
+    <el-form-item label="输入修改密码" prop="checkPass">
       <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off"></el-input>
     </el-form-item>
-    <el-form-item label="年龄" prop="age">
+    <el-form-item label="确认修改密码" prop="age">
       <el-input v-model.number="ruleForm2.age"></el-input>
     </el-form-item>
     <el-form-item>
@@ -92,7 +92,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .updatePassword{
     position: absolute;
     top: 140px;
