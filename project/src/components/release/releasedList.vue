@@ -1,7 +1,7 @@
 <template>
    <div class="box">
     <div class="infinite-list" v-infinite-scroll="load" style="overflow: scroll;">
-        <div v-for="(i,z) in count" class="infinite-list-item" :key="z" >{{ i }}</div>
+        <div v-for="(i,z) in count" class="infinite-list-item" :key="z" >发布历史：{{ i }}</div>
     </div>
    </div>
 </template>
@@ -35,12 +35,13 @@ export default {
 .box{
     position:absolute;
     top:160px;
+    top:280px;
     left:30px;
     width: 200px;
     background-color: #EDEDED;
 }
 .infinite-list{
-    height: 800px;
+    height: 600px;
 }
 .infinite-list-item{
     height: 60px;

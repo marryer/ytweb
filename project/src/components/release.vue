@@ -5,9 +5,11 @@
         <!-- 发布按钮 -->
         <releaseBtn></releaseBtn>
         <!-- 已经发布商品列表 -->
-        <releasedList @click="showH"></releasedList>
+        <releasedList></releasedList>
         <!-- 商品上传页面 -->
         <releasePage v-show="flag"></releasePage>
+        <!-- 广告 -->
+        <ad :class="adPosition"></ad>
         
     </div>
 </template>
@@ -18,18 +20,29 @@ import top from './index/top.vue'
 import releaseBtn from './release/releaseBtn.vue'
 import releasedList from './release/releasedList.vue'
 import releasePage from './release/releasePage.vue'
+import ad from './index/ad.vue'
 
 export default {
     name:'Release',
-    components:{top,releaseBtn,releasedList,releasePage},
+    components:{
+        top,
+        releaseBtn,
+        releasedList,
+        releasePage,
+        ad,
+    },
     data(){
         return{
             flag:true,
+            adPosition:'ad_position',
         }
     },  
 }
 </script>
 
 <style>
-
+.ad_position{
+    position: absolute;
+    top: 100px;
+}
 </style>

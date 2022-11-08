@@ -15,7 +15,11 @@
   import shoppingFooter from './shoppingCar/shoppingFooter'
   export default {
     name:'ShoppingCar',
-    components:{top,shoppingCarList,shoppingFooter}
+    components:{
+      top,
+      shoppingCarList,
+      shoppingFooter,
+    }
   }
 </script>
 
