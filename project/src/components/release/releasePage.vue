@@ -42,13 +42,9 @@
             </el-select>
         </el-form-item>
         <br>
-        <!-- 交易地点 -->
-        <el-form-item label="交易地点" :class="radioBox">
-            <el-radio-group v-model="form.address">
-                <el-radio label="送上寝室" ></el-radio>
-                <el-radio label="自取" ></el-radio>
-                <el-radio label="放到指定地点" ></el-radio>
-            </el-radio-group>
+        <!-- 专业 -->
+        <el-form-item label="所用专业：" :class="bookSpecialty">
+            <el-input v-model="form.bookSpecialty" placeholder="请输入专业" :class="[inputStyle,inputFocus]"></el-input>
         </el-form-item>
         <!-- 书籍详情 -->
         <el-form-item label="书籍详情" :class="tips">
@@ -73,7 +69,7 @@ export default {
                 bookAuthor:'',
                 price:'',
                 regin:'',
-                address:'',
+                bookSpecialty:'',
                 area:'',
             },
             box1:'box1',
@@ -84,7 +80,7 @@ export default {
             priceBox:'price_box',
             imgBox:'img_box',
             selectBox:'select_box',
-            radioBox:'radio_box',
+            bookSpecialty:'book_specialty',
             tips:'tips',
             submitBox:'submit_box',
             successBtn:'success_btn',
@@ -114,12 +110,9 @@ export default {
 
 <style scoped>
 .box1{
-    position: fixed;
-    margin-top: -260px;
-    left: 300px;
-    top: 50%;
-    left: 50%;
-    margin-left:-600px;
+    position: absolute;
+    margin-top: 100px;
+    margin-left:350px;
     width: 700px;
     height: 600px;
     /* margin-top: 40px; */
@@ -134,13 +127,21 @@ export default {
     margin-left: 20px;
     width:60%;
 }
+.book_name{
+    position: absolute;
+    margin-left: -30px;
+}
+.book_author{
+    position: absolute;
+    margin-left: 10px;
+}
 .book_name,.book_author{
     position: absolute;
     top:5%;
-    margin-left: -30px;
     font-size:40px;
     font-weight: 700;
 }
+
 .book_author{
     position: absolute;
     top: 5%;
@@ -160,8 +161,9 @@ export default {
     position: absolute;
     top: 28%;
 }
-.radio_box{
+.book_specialty{
     position: absolute;
+    left: 20px;
     top: 35%;
 }
 .tips{
