@@ -8,9 +8,6 @@
         <releasedList></releasedList>
         <!-- 商品上传页面 -->
         <releasePage v-show="flag"></releasePage>
-        <!-- 广告 -->
-        <ad :class="adPosition"></ad>
-        
     </div>
 </template>
 
@@ -20,7 +17,11 @@
 import releaseBtn from '../components/release/releaseBtn'
 import releasedList from '../components/release/releasedList'
 import releasePage from '../components/release/releasePage'
-import ad from '../components/index/ad'
+// import ad from '../components/index/ad'
+// import top from './index/top.vue'
+// import releaseBtn from '../components/release/releaseBtn'
+// import releasedList from '../components/release/releasedList'
+// import releasePage from '../components/release/releasePage'
 
 export default {
     name:'Release',
@@ -29,7 +30,6 @@ export default {
         releaseBtn,
         releasedList,
         releasePage,
-        ad,
     },
     data(){
         return{

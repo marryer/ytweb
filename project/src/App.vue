@@ -2,7 +2,7 @@
   <div>
     <top></top>
     <!-- 指定组件呈现的位置 -->
-      <router-view></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
