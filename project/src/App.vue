@@ -2,30 +2,20 @@
   <div>
     <top></top>
     <!-- 首页 --> 
-    <index v-show="false"></index>
+    <!-- <index v-show="false"></index> -->
     <!-- 发布商品 -->
-    <release v-show="false"></release>
+    <!-- <release v-show="false"></release> -->
     <!-- 购物车 -->
     <!-- <shoppingCar></shoppingCar> -->
-    <shoppingCar v-show="false"></shoppingCar>
-    <release v-show="false" ></release>
+    <!-- <shoppingCar v-show="false"></shoppingCar> -->
+    <!-- <release v-show="false" ></release> -->
     <!-- 全部商品展示 -->
-    <commodity v-show="true"></commodity>
+    <!-- <commodity v-show="true"></commodity> -->
     <!-- 用户中心 -->
     <!-- <user></user> -->
     
     <!-- 指定组件呈现的位置 -->
-    <div>
       <router-view></router-view>
-    </div>
-  
-
-    <user v-show="false"></user>
-    <!-- 指定组件呈现的位置 -->
-    <!-- <router-view></router-view> -->
-    <user v-show="false"></user> 
-    <!-- 退出 -->
-    <exit v-show="false"></exit>
   </div>
 </template>
 
