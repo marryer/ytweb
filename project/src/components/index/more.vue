@@ -1,7 +1,8 @@
 <template>
   <div class="more">
    <p>
-    <a href="javascript:;"><span>浏览更多 </span><img src="../../img/arrowRight.png" alt=""/></a>
+    <!-- <a href="javascript:;"></a> -->
+    <router-link to="/commodity"><span>浏览更多 </span><img src="../../img/arrowRight.png" alt=""/></router-link>
    </p>
   </div>
 </template>
