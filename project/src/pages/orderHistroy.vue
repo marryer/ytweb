@@ -3,9 +3,9 @@
 </template>
 
 <script>
-import list from '../shoppingCar/list';
+import list from '../components/shoppingCar/list';
   export default {
-    name:'SoldOut',
+    name:'orderHistroy',
     components:{list}
   }
 </script>
