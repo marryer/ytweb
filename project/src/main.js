@@ -7,18 +7,19 @@ import ElementUI from 'element-ui'
 // 引入组件库样式
 import 'element-ui/lib/theme-chalk/index.css'
 import VueRouter from 'vue-router'
-import router from './router'
+import router from './router/index'
 
 Vue.config.productionTip = false
 // 使用App组件
 Vue.use(ElementUI)
 Vue.use(VueRouter)
+// Vue.use(router)
 
 new Vue({
   el:'#app',
-  render: h => h(App),
   router:router,
-// 安装全局事件总线
+  render: h => h(App),
+  // 安装全局事件总线
 beforeCreate(){
   Vue.prototype.$bus = this
 }

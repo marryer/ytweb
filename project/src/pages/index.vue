@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 导航条 -->
-    <top></top>
+    <!-- <top></top> -->
     <!-- 搜索框 -->
     <search></search>
     <!-- 登录,注册指示 -->
@@ -21,16 +21,16 @@
 
 <script>
 // 引入子组件
-import top from './index/top'
-import search from './index/search'
-import login from './index/login'
-import logo from './index/logo'
-import business from './index/business'
-import ad from './index/ad'
-import more from './index/more'
+// import top from '../components/index/top'
+import search from '../components/index/search'
+import login from '../components/index/login'
+import logo from '../components/index/logo'
+import business from '../components/index/business'
+import ad from '../components/index/ad'
+import more from '../components/index/more'
   export default {
     name:'Index',
-    components:{top,search,login,logo,business,ad,more}
+    components:{search,login,logo,business,ad,more},
   }
 </script>
 

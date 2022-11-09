@@ -9,12 +9,21 @@
     active-text-color="#ffd04b">
     <el-menu-item>欢迎来到易书</el-menu-item>
     <!-- vue中借助router-link标签 实现路由切换 -->
-    <el-menu-item index="1" class="top-one"> <router-link to="/index"  target="_blank" class="all-line">首页</router-link></el-menu-item>
-    <el-menu-item index="2" class="top-two"><router-link to="/commodity"  target="_blank" class="all-line">书海</router-link></el-menu-item>
-    <el-menu-item index="3" class="top-three"> <router-link to="/release"   target="_blank" class="all-line">发布</router-link></el-menu-item>
-    <el-menu-item index="4" class="top-four"> <router-link to="/shoppingCar"  target="_blank" class="all-line">书单</router-link></el-menu-item>
-    <el-menu-item index="5" class="top-right"><router-link to="/user"   target="_blank" class="all-line">用户中心</router-link></el-menu-item>
-    <el-menu-item index="6" class="top-right"><a href="javascript:;" target="_blank" class="all-line">退出</a></el-menu-item>
+    <el-menu-item :index="1" class="top-one">
+      <router-link 
+      :to="{
+        name:'index',
+        }"  
+      target="_blank" 
+      class="all-line">
+        首页
+      </router-link>
+    </el-menu-item>
+    <el-menu-item :index="2" class="top-two"><router-link to="/commodity"  target="_blank" class="all-line">书海</router-link></el-menu-item>
+    <el-menu-item :index="3" class="top-three"><router-link to="/release"   target="_blank" class="all-line">发布</router-link></el-menu-item>
+    <el-menu-item :index="4" class="top-four"><router-link to="/shoppingCar"  target="_blank" class="all-line">书单</router-link></el-menu-item>
+    <el-menu-item :index="5" class="top-right"><router-link to="/user"   target="_blank" class="all-line">用户中心</router-link></el-menu-item>
+    <el-menu-item :index="6" class="top-right"><a href="javascript:;" target="_blank" class="all-line">退出</a></el-menu-item>
   </el-menu>
 </template>
 
@@ -31,14 +40,16 @@ export default {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     }
-  }
+  },
+
   }
 </script>
 
 <style scoped>
 /* 去掉超链接的下划线 */
-  .all-line{
+  a{
     text-decoration: none;
+    display: block;
   }
   .top{
     float: left;

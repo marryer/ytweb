@@ -4,16 +4,16 @@
       <el-menu :default-openeds="['1', '3']">
         <el-submenu index="1">
           <!-- router-link 路由切换 -->
-          <template slot="title"><i class="el-icon-document"></i> <router-link to="basicShow">基本信息</router-link></template>
+          <template slot="title"><i class="el-icon-document"></i> <router-link :to="{name:'basicShow'}">基本信息</router-link></template>
         </el-submenu>
         <el-submenu index="2">
-          <template slot="title"><i class="el-icon-refresh"></i> <router-link to="updatePwd">修改密码</router-link></template>
+          <template slot="title"><i class="el-icon-refresh"></i> <router-link to="/user/updatePwd">修改密码</router-link></template>
         </el-submenu>
         <el-submenu index="3">
-          <template slot="title"><i class="el-icon-sold-out"></i><router-link to="soldOut">下架书籍</router-link></template>
+          <template slot="title"><i class="el-icon-sold-out"></i><router-link to="/user/soldOut">下架书籍</router-link></template>
         </el-submenu>
         <el-submenu index="4">
-          <template slot="title"><i class="el-icon-setting"></i> <router-link to="orderHistroy">订单历史</router-link> </template>
+          <template slot="title"><i class="el-icon-setting"></i> <router-link to="/user/orderHistroy">订单历史</router-link> </template>
         </el-submenu>
       </el-menu>
     </el-aside>

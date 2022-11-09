@@ -1,6 +1,6 @@
 <template>
  <ul class="basicShow">
-  <li><img src="../../img/头像 女孩 (1).png" alt=""></li>
+  <li><img src="../img/头像 女孩 (1).png" alt=""></li>
   <li>{{user.fakeName}}</li>
   <li> 姓名：{{user.realName}}</li>
   <li>校内地址：{{user.address}}</li>
