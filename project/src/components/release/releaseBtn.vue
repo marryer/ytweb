@@ -25,7 +25,7 @@ export default {
 .r_btn{
   /* 发布按钮位置 */
   position: absolute;
-  top:60px;
+  margin-top:40px;
   left: 60px;
   /* 发布按钮大小 */
   display: inline-block;
