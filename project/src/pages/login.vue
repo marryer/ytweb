@@ -1,5 +1,6 @@
 <template>
     <login></login>
+    <!-- <router-view></router-view> -->
 </template>
 
 <script>
