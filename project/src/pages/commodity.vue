@@ -1,8 +1,7 @@
 <template>
   <div>
-    <!-- <top></top> -->
     <search></search>
-    <logo class="commodity-logo"></logo>
+    <logo></logo>
     <ad class="commodity-ad"></ad>
     <classify></classify>
     <slideShow></slideShow>
@@ -12,7 +11,6 @@
 </template>
 
 <script>
-  // import top from '../components/index/top'
   import logo from '../components/index/logo'
   import search from '../components/index/search'
   import ad from '../components/index/ad'
@@ -25,14 +23,8 @@
     components:{logo,search,ad,classify,slideShow,business,allShow}
   }
 </script>
-
 <style scoped>
-  .commodity-logo{
-    top: 28px;
-    left: 120px;
-    background-color: red;
+.commodity-ad{
+  top: 100px;
 }
-  .commodity-ad{
-    margin-top: -220px;
-  }
 </style>

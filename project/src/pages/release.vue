@@ -1,8 +1,7 @@
 <template>
     <div>
-        <!-- 导航条 -->
-        <!-- <top></top> -->
         <!-- 发布按钮 -->
+        <logo></logo>
         <releaseBtn></releaseBtn>
         <!-- 已经发布商品列表 -->
         <releasedList></releasedList>
@@ -13,23 +12,17 @@
 
 <script>
 // 引入子组件
-// import top from './index/top.vue'
 import releaseBtn from '../components/release/releaseBtn'
 import releasedList from '../components/release/releasedList'
 import releasePage from '../components/release/releasePage'
-// import ad from '../components/index/ad'
-// import top from './index/top.vue'
-// import releaseBtn from '../components/release/releaseBtn'
-// import releasedList from '../components/release/releasedList'
-// import releasePage from '../components/release/releasePage'
-
+import logo from '@/components/index/logo'
 export default {
     name:'Release',
     components:{
-        // top,
         releaseBtn,
         releasedList,
         releasePage,
+        logo
     },
     data(){
         return{

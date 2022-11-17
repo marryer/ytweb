@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <top></top>
     <!-- 指定组件呈现的位置 -->
     <router-view></router-view>
@@ -13,5 +13,10 @@ export default {
   components:{top},
 }
 </script>
+<style>
+.app{
+  font-family: '宋体';
+}
+</style>
 
 

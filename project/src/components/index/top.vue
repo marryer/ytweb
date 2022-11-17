@@ -1,15 +1,17 @@
 <template>
+  <!-- 67C23A  ffd04b-->
   <el-menu
-    :default-active="activeIndex2"
+  :default-active="activeIndex2"
     class="el-menu-demo top"
     mode="horizontal"
     @select="handleSelect"
-    background-color="#67C23A"
-    text-color="#fff"
-    active-text-color="#ffd04b">
+    background-color="#fff"
+    text-color="black"
+    active-text-color="#9a8600"
+    tab-position="top">
     <el-menu-item>欢迎来到易书</el-menu-item>
     <!-- vue中借助router-link标签 实现路由切换 -->
-    <el-menu-item :index="1" class="top-one">
+    <el-menu-item index="1" class="top-one">
       <router-link 
       :to="{
         name:'index',
@@ -19,11 +21,11 @@
       </router-link>
     </el-menu-item>
     <!-- router-link中添加 target="_blank" 会使路由新开页签进行跳转 -->
-    <el-menu-item :index="2" class="top-two"><router-link to="/commodity" class="all-line">书海</router-link></el-menu-item>
-    <el-menu-item :index="3" class="top-three"><router-link to="/release"  class="all-line">发布</router-link></el-menu-item>
-    <el-menu-item :index="4" class="top-four"><router-link to="/shoppingCar" class="all-line">书单</router-link></el-menu-item>
-    <el-menu-item :index="5" class="top-right"><router-link to="/user"   class="all-line">用户中心</router-link></el-menu-item>
-    <el-menu-item :index="6" class="top-right"><a href="javascript:;"  class="all-line">退出</a></el-menu-item>
+    <el-menu-item index="2" class="top-two"><router-link to="/commodity" class="all-line">书海</router-link></el-menu-item>
+    <el-menu-item index="3" class="top-three"><router-link to="/release"  class="all-line">发布</router-link></el-menu-item>
+    <el-menu-item index="4" class="top-four"><router-link to="/shoppingCar" class="all-line">书单</router-link></el-menu-item>
+    <el-menu-item index="5" class="top-right"><router-link to="/user"   class="all-line">用户中心</router-link></el-menu-item>
+    <el-menu-item index="6" class="top-right"><a href="javascript:;"  class="all-line">退出</a></el-menu-item>
   </el-menu>
 </template>
 
@@ -52,7 +54,7 @@ export default {
     display: block;
   }
   .top{
-    float: left;
+    /* float: left; */
     background-color: #67C23A;
     width: 1260px;
   }

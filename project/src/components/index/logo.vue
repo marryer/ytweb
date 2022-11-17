@@ -1,5 +1,7 @@
 <template>
-  <div>logo</div>
+  <div class="logo">
+    <img src="../../img/logo.jpg" alt="">
+  </div>
 </template>
 
 <script>
@@ -8,9 +10,14 @@
   }
 </script>
 
-<style scoped>
-  div{
+<style scoped lang="less">
+  .logo {
     position: absolute;
-    background-color: #67C23A;
+    // background-color: red;
+    top: 15px;
+    left: 120px;
+    img{
+      width: 60px;
+    }
   }
 </style>
