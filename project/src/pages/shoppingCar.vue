@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- 顶部导航栏 -->
-    <!-- <top class="shopping-top"></top> -->
+    <logo></logo>
     <!-- 商品订单列表 -->
     <shoppingCarList></shoppingCarList>
     <!-- 商品底部 -->
@@ -13,20 +12,13 @@
   // import top from './index/top'
   import shoppingCarList from '../components/shoppingCar/shoppingCarList'
   import shoppingFooter from '../components/shoppingCar/shoppingFooter'
+import logo from '@/components/index/logo';
   export default {
     name:'ShoppingCar',
     components:{
-      // top,
+      logo,
       shoppingCarList,
       shoppingFooter,
     }
   }
 </script>
-
-<style scoped>
-.shopping-top{
-  /* margin-top: -30px; */
-}
-
-
-</style>

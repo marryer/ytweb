@@ -33,7 +33,7 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, .2);
 }
   .el-header {
-    background-color: #B3C0D1;
+    background-color: #9a8600;
     color: #333;
     line-height: 60px;
   }
