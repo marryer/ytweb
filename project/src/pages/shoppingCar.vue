@@ -1,5 +1,6 @@
 <template>
   <div>
+    <logo></logo>
     <!-- 商品订单列表 -->
     <shoppingCarList></shoppingCarList>
     <!-- 商品底部 -->

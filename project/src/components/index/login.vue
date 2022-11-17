@@ -3,10 +3,17 @@
     <div><img src="../../img/head.png" alt=""></div>
     <p class="login-char">Hi,你好</p>
     <div style="margin: 20px 0">
-      <el-button type="success">
-        <router-link :to="{name:'denglu'}">登陆</router-link>
-    </el-button>
-      <el-button type="success" plain><router-link to="">注册</router-link></el-button>
+        <div class="leftBtn">
+          <router-link :to="{name:'denglu'}">
+          <el-button type="success">登陆</el-button>
+        </router-link>
+        </div>
+        <div class="rightBtn">
+          <router-link :to="{name:'zhuce'}">
+          <el-button type="success" plain>注册</el-button>
+        </router-link>
+        </div>
+  
     </div>
   </div>
 </template>
@@ -30,6 +37,7 @@ a{
     top: 99px;
     right:10px;
     width: 320px;
+    height: 200px;
     text-align: center;
     border: 1px solid rgba(227, 225, 225, 0.879);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -37,5 +45,15 @@ a{
   }
   .login-char{
     font-size: 14px;
+  }
+  .leftBtn{
+    display: inline-block;
+    position: absolute;
+    left: 75px;
+  }
+  .rightBtn{
+    display: inline-block;
+    position: absolute;
+    right: 75px;
   }
 </style>

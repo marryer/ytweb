@@ -1,5 +1,6 @@
 <template>
   <div>
+    <logo></logo>
     <!-- 顶部导航条 -->
     <top></top>
 
