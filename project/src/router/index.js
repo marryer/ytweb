@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 // 引入要展示的组件
 import index from '../pages/index'
-import login from '../pages/login'
+import denglu from '../pages/denglu'
 import user from '../pages/user'
 import commodity from '../pages/commodity'
 import release from '../pages/release'
@@ -21,9 +21,9 @@ export default new VueRouter({
       component: index,
       children: [
         {
-          name: 'login',
-          path: '/',
-          component: login,
+          name: 'denglu',
+          path: 'denglu',
+          component: denglu,
         },
       ]
     },

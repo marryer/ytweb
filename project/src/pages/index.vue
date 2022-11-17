@@ -12,7 +12,7 @@
     <ad></ad>
     <!-- 查看更多，会跳转到全部商品页面 -->
     <more></more>
-    <!-- <router-view></router-view> -->
+    <router-view></router-view>
   </div>
 </template>
 

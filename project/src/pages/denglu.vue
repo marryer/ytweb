@@ -1,41 +1,63 @@
 <template>
-    <div class="main">
-        <div class="user_name">
-            <label for="userName" class="userNameTip">请输入您的账户</label>
-            <input type="text" id="userName">
+   <div class="all">
+        <div class="main">
+            <div class="user_name">
+                <label for="userName" class="userNameTip"></label>
+                <input type="text" id="userName" placeholder="请输入您的账户">
+            </div>
+            <div class="pass_word">
+                <label for="passWord" class="passWordTip"></label>
+                <input type="password" id="passWord" placeholder="请输入您的密码">
+            </div>
+            <button class="loginBtn"> <router-link   :to="{name:'index'}">登陆</router-link></button>
+            <button class="resBtn">重置</button>
         </div>
-        <div class="pass_word">
-            <label for="passWord" class="passWordTip">请输入您的密码</label>
-            <input type="password" id="passWord">
-        </div>
-        <button class="loginBtn">登陆</button>
-        <button class="resBtn">重置</button>
-    </div>
+   </div>
 </template>
 
 <script>
 export default {
-    name:'Login',
+    name:'Denglu',
 }
 </script>
 
-<style>
-html{
+<style scoped>
+
+a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+input{
+    font-family: "宋体";
+    font-size: 16px;
+}
+.all{
+    position: absolute;
+    top: 0;
+    width: 1300px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.829);
+    z-index: 999;
+}
+/* html{
     position: relative;
     width: 100%;
     height: 100%;
     background-color: #ededed;
-}
+   
+} */
 .main{
     width: 400px;
-    height: 400px;
-    background-color: #a3a0a0;
+    height: 380px;
+    background-color: #fff;
     position: absolute;
     left: 50%;
     margin-left: -200px;
     top: 50%;
     margin-top: -200px;
     border-radius: 5px;
+    color: black;
 }
 .user_name{
     width: 200px;
@@ -53,11 +75,11 @@ html{
     position: absolute;
     top: 150px;
     left: 40px;
-    background-color: #a3a0a0;
+    /* background-color: #fff; */
     font-size: 20px;
 }
 .userNameTip{
-    color: white;
+    /* color: black; */
     position: absolute;
     top: 0px;
 }
@@ -67,10 +89,10 @@ html{
 
 }
 .passWordTip{
-    color: white;
+    /* color: white; */
     position: absolute;
     top: 0px;
-    background-color: #a3a0a0;
+    /* background-color: #fff; */
 }
 
 .loginBtn{
@@ -80,15 +102,16 @@ html{
     position: absolute;
     bottom: 100px;
     left: 50%;
-    font-weight: 700;
+    /* font-weight: 700; */
     margin-left: -120px;
-    background-color: rgb(123, 212, 241);
-    border: 2px solid rgb(123, 212, 241);
+    background-color: #67c23a;
+    /* border: 2px solid rgb(123, 212, 241); */
+    border: none;
     border-radius: 10px;
 }
-.loginBtn:hover{
+/* .loginBtn:hover{
     box-shadow: 0px 0px 4px 2px rgb(163, 226, 247);
-}
+} */
 .resBtn{
     display: inline-block;
     width: 80px;
@@ -96,14 +119,15 @@ html{
     position: absolute;
     bottom: 100px;
     left: 50%;
-    font-weight: 700;
+    /* font-weight: 700; */
     margin-left: 20px;
-    background-color: rgb(188, 224, 236);
-    border: 2px solid rgb(188, 224, 236);
+    background-color: #e9f7e2;
+    /* border: none; */
+    border: 1px solid #67c23aa9;
     border-radius: 10px;
 }
 .resBtn:hover{
-    box-shadow: 0px 0px 4px 2px rgb(225, 238, 242);
+    background-color: #67c23a;
 }
 #userName{
     display: inline-block;
@@ -112,13 +136,14 @@ html{
     color: #000;
     font-size: 20px;
     border: 0px transparent;
-    border-bottom: 2px solid #fff;
-    background-color: #a3a0a0;
+    border-bottom: 1px solid #000;
+    /* background-color: #fff; */
 }
 #userName:focus{
     outline: none;
     border-bottom: 2px solid #000;
-    /* animation: user 0.3s linear ; */
+    /* box-shadow: 0px 0px 4px 2px rgb(225, 238, 242); */
+    animation: user 0.3s linear ;
 }
 #passWord{
     display: inline-block;
@@ -127,12 +152,13 @@ html{
     color: #000;
     font-size: 20px;
     border: 0px transparent;
-    border-bottom: 2px solid #fff;
-    background-color: #a3a0a0;
+    border-bottom: 1px solid #000;
+    /* background-color: #fff; */
 }
 #passWord:focus{
     outline: none;
     border-bottom: 2px solid #000;
+    /* box-shadow: 0px 0px 4px 2px rgb(225, 238, 242); */
 }
 @keyframes user {
     from{

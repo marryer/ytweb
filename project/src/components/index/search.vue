@@ -12,7 +12,7 @@
         ></el-autocomplete>
       </el-col>
   </el-row>
-  <div class="search-box">搜索</div>
+  <div class="search-box"><a href="javascript:;">搜索</a></div>
   </div>
 </template>
 
@@ -101,6 +101,11 @@
 </script>
 
 <style scoped>
+a{
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
 /* 设置整个搜索框的位置 */
   .middle{
     position: relative;
