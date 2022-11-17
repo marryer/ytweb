@@ -3,8 +3,9 @@
     <div><img src="../../img/head.png" alt=""></div>
     <p class="login-char">Hi,你好</p>
     <div style="margin: 20px 0">
-      <el-button type="success">登录</el-button>
-      <el-button type="success" plain>注册</el-button>
+      <el-button type="success"><router-link to="/login">登陆</router-link></el-button>
+      <el-button type="success" plain><router-link to="">注册</router-link></el-button>
+      <!-- <router-view></router-view> -->
     </div>
   </div>
 </template>

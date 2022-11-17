@@ -4,7 +4,7 @@
     <search></search>
     <!-- 登录,注册指示 -->
     <login></login>
-    <!-- logo -->
+        <!-- logo -->
     <logo></logo>
     <!-- 一部分商品展示 -->
     <business></business>
@@ -12,6 +12,7 @@
     <ad></ad>
     <!-- 查看更多，会跳转到全部商品页面 -->
     <more></more>
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 

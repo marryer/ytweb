@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- 导航条 -->
-        <!-- <top></top> -->
+        <top></top>
         <!-- 发布按钮 -->
         <releaseBtn></releaseBtn>
         <!-- 已经发布商品列表 -->

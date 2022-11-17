@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <top></top> -->
+    <top></top>
     <search></search>
     <logo class="commodity-logo"></logo>
     <ad class="commodity-ad"></ad>

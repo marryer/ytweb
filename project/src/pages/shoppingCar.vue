@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 顶部导航栏 -->
-    <!-- <top class="shopping-top"></top> -->
+    <top class="shopping-top"></top>
     <!-- 商品订单列表 -->
     <shoppingCarList></shoppingCarList>
     <!-- 商品底部 -->
