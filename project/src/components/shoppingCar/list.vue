@@ -51,7 +51,7 @@
   }
   .list-number{
     margin: 0 170px;
-    color: #ffcf4b;
+    color: #9a8600;
   }
   .list-oprate{
     margin-left: 140px;
@@ -59,7 +59,7 @@
     background-color: #fff;
   }
   .list-oprate:hover, .list-oprate:focus{
-    color:#ffcf4b
+    color:red
   }
 }
 </style>

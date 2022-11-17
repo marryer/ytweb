@@ -50,7 +50,7 @@
 
     }
     li:hover{
-      color: #ffd04b;
+      color: #9a8600;
     }
   }
 </style>
