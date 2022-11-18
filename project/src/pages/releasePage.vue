@@ -19,7 +19,7 @@
             <el-upload
             :class="uploadImg"
             drag
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action="http://124.221.229.229:8888/api/posts/add"
             multiple>
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
@@ -44,7 +44,7 @@
         </el-form-item>
         <!-- 书籍详情 -->
         <el-form-item label="书籍详情" :class="tips">
-            <el-input type="textarea" v-model="form.area" cols="70" rows="5"></el-input>
+            <el-input type="textarea" v-model="form.area" cols="70" rows="3"></el-input>
         </el-form-item>
         <!-- 表单结束 -->
         <el-form-item :class="submitBox">
@@ -158,16 +158,16 @@ export default {
 }
 .select_box{
     position: absolute;
-    top: 49%;
+    top: 54%;
 }
 .book_specialty{
     position: absolute;
     left: 20px;
-    top: 56%;
+    top: 62%;
 }
 .tips{
     position: absolute;
-    top:64%;
+    top:70%;
 }
 .submit_box{
     position: absolute;

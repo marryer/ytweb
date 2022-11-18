@@ -8,6 +8,7 @@
         <el-button type="success" :class="btn2">发布历史</el-button>
       </router-link>  
     </el-row>
+    <router-view></router-view>
   </div>
 </template>
 
