@@ -30,9 +30,6 @@
   list-style: none;
   width: 1005px;
   height: 120px;
-  // line-height: 120px;
-  // background-color:red ;
-  // border: 1px solid black;
   margin: 0 auto;
   padding-left: 15px;
   border: 1px solid rgba(227, 227, 227, 0.863);
@@ -40,7 +37,6 @@
 
   img{
     width: 12%;
-    // margin-top: 15px;
     margin-left: 10px;
     margin-right: 25px;
     margin-bottom: -45px;

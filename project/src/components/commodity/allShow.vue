@@ -1,32 +1,11 @@
 <template>
   <div class="allShow">
     <div class="allShow-one">
-      <div>
+      <div v-for="list in bookList" :key="list.bookId">
         <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元 </p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
-      </div>
-      <div>
-        <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元</p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
-      </div>
-      <div>
-        <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元</p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
-      </div>
-      <div>
-        <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元</p>
+        <h3>书名: {{list.bookName}}</h3>
+        <p>作者: {{list.author}}</p>
+        <p style="color:#9a8600">价格: {{list.price}} 元</p>
         <el-button type="success" plain class="allshow-button">加入书单</el-button>
       </div>
     </div>
@@ -34,6 +13,7 @@
 </template>
 
 <script>
+import axios from 'axios'
   export default {
     name:'AllShow',
     data(){
@@ -42,21 +22,20 @@
           name:'计算机网络',
           author:'谢希仁',
           price:23
-        }
+        },
+        bookList:[]
       }
-    }
+    },
   }
 </script>
 <style  scoped lang="less"> 
 .allShow{
   width: 1200px;
-  // height: 400px;
-  // background-color: #f1f2f3;
     .allShow-one{
     margin-top: 60px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    // background-color: red;
     justify-content: space-around;
       div{
         width: 260px;

@@ -24,15 +24,12 @@
     border-top: none;
     border-bottom: none;
     margin-top: 55px;
-    // box-shadow: 0 0 2px rgba(0, 0, 0, .2);
     .imagenation-one{
       display: inline-block;
-      // background-color: red;
       margin-left: 160px;
     }
     .imagenation-two{
       display: inline-block;
-      // background-color:gray ;
       margin: 0 300px;
     }
   }

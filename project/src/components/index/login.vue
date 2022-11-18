@@ -5,13 +5,14 @@
     <div style="margin: 20px 0">
       <el-button type="success">
         <router-link :to="{name:'denglu'}">登陆</router-link>
-    </el-button>
+      </el-button>
       <el-button type="success" plain><router-link to="">注册</router-link></el-button>
     </div>
   </div>
 </template>
 
 <script>
+// import axios from 'axios'
   export default {
     name:'Login',
   }
@@ -25,7 +26,6 @@ a{
 }
 /* 设置登录注册框的样式 */
 .login{
-    /* background-color: red; */
     position: absolute;
     top: 99px;
     right:10px;

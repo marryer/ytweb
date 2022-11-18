@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import axios from 'axios'
   export default {
     name:'Search',
     data() {
@@ -27,6 +28,18 @@
       };
     },
     methods: {
+      methods:{
+        test(){
+            axios.get('http://localhost:8080/category').then(
+                response =>{
+                    console.log("请求成功",response.data)
+                },
+                error =>{
+                    console.log("请求失败",error.message)
+                }
+            )
+        }
+    },
       querySearch(queryString, cb) {
         var restaurants = this.restaurants;
         var results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants;

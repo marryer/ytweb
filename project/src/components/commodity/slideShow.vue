@@ -28,23 +28,6 @@
   width: 880px;
   height: 300px;
   margin-top: 80px;
-  /* box-shadow: 0 0 2px rgba(0, 0, 0, .2); */
-    /* padding: 8px; */
-    background-color:rgba(230, 227, 197, 0.815);
+  background-color:rgba(230, 227, 197, 0.815);
 }
-   /* .el-carousel__item h3 {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 300px;
-    margin: 0;
-  } */
-  
-  /* .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  } */
-  
-  /* .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  } */
 </style>

@@ -16,7 +16,6 @@
   .more{
     width: 320px;
     height: 135px;
-    // line-height: 135px;
     position: absolute;
     border: 1px solid rgba(227, 227, 227, 0.863);
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
