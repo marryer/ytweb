@@ -3,6 +3,7 @@
     <div><img src="../../img/head.png" alt=""></div>
     <p class="login-char">Hi,你好</p>
     <div style="margin: 20px 0">
+
         <div class="leftBtn">
           <router-link :to="{name:'denglu'}">
           <el-button type="success">登陆</el-button>
@@ -13,12 +14,12 @@
           <el-button type="success" plain>注册</el-button>
         </router-link>
         </div>
-  
     </div>
   </div>
 </template>
 
 <script>
+// import axios from 'axios'
   export default {
     name:'Login',
   }
@@ -32,7 +33,6 @@ a{
 }
 /* 设置登录注册框的样式 */
 .login{
-    /* background-color: red; */
     position: absolute;
     top: 99px;
     right:10px;

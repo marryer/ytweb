@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 // 引入子组件
 import search from '../components/index/search'
 import login from '../components/index/login'
@@ -26,6 +27,11 @@ import ad from '../components/index/ad'
 import more from '../components/index/more'
   export default {
     name:'Index',
+    data(){
+      return{
+      // bookList:[]
+      }
+    },
     components:{search,login,logo,business,ad,more},
   }
 </script>

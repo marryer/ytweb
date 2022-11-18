@@ -19,10 +19,7 @@
     height: 45px;
     line-height: 45px;
     margin :0 auto;
-    /* margin-top: 30px; */
-    /* margin-bottom: 20px; */
     border: 1px solid rgba(227, 227, 227, 0.863);
-    /* box-shadow: 0 0 2px rgba(0, 0, 0, .2); */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-left: 20px;

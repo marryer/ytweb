@@ -13,7 +13,6 @@
 <style scoped lang="less">
   .logo {
     position: absolute;
-    // background-color: red;
     top: 15px;
     left: 120px;
     img{

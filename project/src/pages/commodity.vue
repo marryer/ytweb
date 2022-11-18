@@ -6,7 +6,11 @@
     <classify></classify>
     <slideShow></slideShow>
     <business></business>
-    <allShow></allShow>
+    <business></business>
+    <business></business>
+    <business></business>
+    <business></business>
+    <!-- <allShow></allShow> -->
   </div>
 </template>
 
@@ -17,10 +21,10 @@
   import classify from '../components/commodity/classify'
   import slideShow from '../components/commodity/slideShow'
   import business from '../components/index/business'
-  import allShow from '../components/commodity/allShow'
+  // import allShow from '../components/commodity/allShow'
   export default {
     name:'Commodity',
-    components:{logo,search,ad,classify,slideShow,business,allShow}
+    components:{logo,search,ad,classify,slideShow,business}
   }
 </script>
 <style scoped>
