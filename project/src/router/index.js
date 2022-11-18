@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 // 引入要展示的组件
 import index from '../pages/index'
 import denglu from '../pages/denglu'
+import zhuce from '../pages/zhuce'
 import user from '../pages/user'
 import commodity from '../pages/commodity'
 import release from '../pages/release'
@@ -25,6 +26,11 @@ export default new VueRouter({
           path: 'denglu',
           component: denglu,
         },
+        {
+          name: 'zhuce',
+          path: 'zhuce',
+          component: zhuce,
+        }
       ]
     },
     {

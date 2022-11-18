@@ -37,8 +37,8 @@ input{
 .all{
     position: absolute;
     top: 0;
-    width: 1300px;
-    height: 600px;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.829);
     z-index: 999;
 }
@@ -60,7 +60,6 @@ input{
     position: absolute;
     top: 50px;
     left: 40px;
-    font-size: 18px;
     font-size: 20px;
 }
 .pass_word{
@@ -125,7 +124,7 @@ input{
     outline: none;
     border-bottom: 2px solid #000;
     animation: user 0.3s linear ;
-}
+} 
 #passWord{
     display: inline-block;
     width: 300px;
