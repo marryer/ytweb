@@ -1,8 +1,12 @@
 <template>
   <div>
     <el-row :class="[rBtn]">
+      <router-link :to="{name:'releasePage'}">
         <el-button type="success" :class="btn1">发布</el-button>
+      </router-link>
+      <router-link :to="{name:'releaseList'}" class="fabu">
         <el-button type="success" :class="btn2">发布历史</el-button>
+      </router-link>  
     </el-row>
   </div>
 </template>
@@ -21,6 +25,15 @@ export default {
 </script>
 
 <style scoped>
+a{
+  display: inline-block;
+  position: absolute;
+  left: 30px;
+}
+.fabu{
+  position: absolute;
+  left: 40px;
+}
 /* 发布按钮样式 */
 .r_btn{
   /* 发布按钮位置 */

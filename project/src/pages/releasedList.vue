@@ -36,7 +36,7 @@ export default {
     position:absolute;
     top:160px;
     top:280px;
-    left:20px;
+    left:50px;
     width: 200px;
     background-color: #EDEDED;
 }

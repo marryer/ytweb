@@ -8,6 +8,8 @@ import zhuce from '../pages/zhuce'
 import user from '../pages/user'
 import commodity from '../pages/commodity'
 import release from '../pages/release'
+import releaseList from '../pages/releasedList'
+import releasePage from '../pages/releasePage'
 import shoppingCar from '../pages/shoppingCar'
 import basicShow from '../pages/basicShow'
 import updatePassword from '../pages/updatePassword'
@@ -60,7 +62,19 @@ export default new VueRouter({
     },
     {
       path: "/release",
-      component: release
+      component: release,
+      children: [
+        {
+          name: 'releasePage',
+          path: '/',
+          component: releasePage
+        },
+        {
+          name: 'releaseList',
+          path: 'releaseList',
+          component: releaseList
+        }
+      ]
     },
     {
       path: '/shoppingCar',
