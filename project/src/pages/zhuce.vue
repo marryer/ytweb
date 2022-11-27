@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <form method="post" class="main">
+    <from  class="main">
         <div class="user_name">
             <input type="text" id="userName" placeholder="请输入您的用户名">
         </div>
@@ -26,7 +26,7 @@
         </div>
         <button class="loginBtn">注册</button>
         <button class="resBtn">重置</button>
-    </form>
+    </from>
   </div>
 </template>
 

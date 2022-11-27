@@ -1,5 +1,5 @@
 <template>
-  <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" class="classify"></el-tree>
+  <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick" class="classify" @click="sendToRelPag"></el-tree>
 </template>
 
 <script>
@@ -60,7 +60,7 @@
     methods: {
       handleNodeClick(data) {
         console.log(data);
-      }
+      },
     }
   }
 </script>

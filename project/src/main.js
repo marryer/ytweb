@@ -11,7 +11,7 @@ import router from './router/index'
 
 Vue.config.productionTip = false
 // 使用App组件
-Vue.use(ElementUI)
+Vue.use(ElementUI) 
 Vue.use(VueRouter)
 // Vue.use(router)
 
