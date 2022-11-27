@@ -3,12 +3,13 @@
 </template>
 
 <script>
+import axios from 'axios';
   export default {
     name:'Classify',
     data() {
       return {
         data: [{
-          label: '书本分类',
+          label:"书本分类",
           children: [
             {
             label: '年级',
@@ -54,14 +55,15 @@
         defaultProps: {
           children: 'children',
           label: 'label'
-        }
+        },
       };
     },
     methods: {
       handleNodeClick(data) {
-        console.log(data);
-      },
-    }
+
+        console.log("classfiy",data);
+      }
+    },
   }
 </script>
 

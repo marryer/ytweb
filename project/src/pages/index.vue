@@ -29,7 +29,6 @@ import more from '../components/index/more'
     name:'Index',
     data(){
       return{
-      // bookList:[]
       }
     },
     components:{search,login,logo,business,ad,more},

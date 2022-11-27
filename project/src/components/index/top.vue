@@ -20,31 +20,51 @@
     <el-menu-item index="3" class="top-three"><router-link to="/release"  class="all-line">发布</router-link>
     </el-menu-item>
     <el-menu-item index="4" class="top-four">
-      <router-link to="/shoppingCar" class="all-line">书单</router-link>
+      <router-link 
+        :to="{
+          path:'/shoppingCar',
+          query:{
+            userInfo:userInfo.userId
+          }
+        }" 
+        class="all-line">书单
+      </router-link>
     </el-menu-item>
     <el-menu-item index="5" class="top-right-user">
       <router-link to="/user"   class="all-line">用户中心</router-link>
     </el-menu-item>
     <el-menu-item index="6" class="top-right">
-      <a href="javascript:;"  class="all-line">退出</a>
+      <a href="javascript:;"  class="all-line" @click="exit">退出</a>
     </el-menu-item>
   </el-menu>
 </template>
 
 <script>
+// import axios from 'axios';
 export default {
   name:'Top',
   data() {
       return {
         activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex2: '1',
+        userInfo:{},
       };
-  },
+  }, 
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+      console.log("key",key,"keyPath", keyPath);
+    },
+    exit(){
+      this.$bus.$emit("removeUsername",'')
+      localStorage.removeItem("userInfo")
+      localStorage.removeItem("data")
     }
   },
+   mounted(){
+      this.$bus.$on("send",userInfo=>{
+        this.userInfo = userInfo
+      })
+    }
 
   }
 </script>

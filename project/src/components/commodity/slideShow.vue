@@ -16,8 +16,7 @@
     var img3 = require("../../img/s2.jpg")
     var img4 = require("../../img/s4.jpg")
     return{
-      img_list:[img1,img2,img3,img4],
-      // slideHeight:300,
+      img_list:[img1,img2,img3,img4]
     }
    }
   }

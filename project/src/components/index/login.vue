@@ -1,12 +1,12 @@
 <template>
   <div class="login">
     <div><img src="../../img/head.png" alt=""></div>
-    <p class="login-char">Hi,你好</p>
+    <p class="login-char">Hi,你好 &nbsp;<span class="login-username">{{username}}</span></p>
     <div style="margin: 20px 0">
 
         <div class="leftBtn">
-          <router-link :to="{name:'denglu'}">
-          <el-button type="success">登陆</el-button>
+          <router-link :to="{name:'denglu' }">
+          <el-button type="success">登录</el-button>
         </router-link>
         </div>
         <div class="rightBtn">
@@ -22,6 +22,19 @@
 // import axios from 'axios'
   export default {
     name:'Login',
+    data(){
+      return{
+        username:JSON.parse(localStorage.getItem("userInfo")).username || '',
+      }
+    },
+    mounted(){
+      this.$bus.$on("userInfo",userInfo=>{
+        this.username = userInfo.username 
+      })
+      this.$bus.$on("removeUsername",username=>{
+        this.username = username.username
+      })
+    }
   }
 </script>
 
@@ -30,6 +43,9 @@ a{
   display: block;
   text-decoration: none;
   color: black;
+}
+.login-username{
+  color:rgba(213, 106, 29, 0.881);
 }
 /* 设置登录注册框的样式 */
 .login{

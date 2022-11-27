@@ -3,23 +3,66 @@
         <div class="main">
             <div class="user_name">
                 <label for="userName" class="userNameTip"></label>
-                <input type="text" id="userName" placeholder="请输入您的账户">
+                <input type="text" id="userName" placeholder="请输入您的账户" v-model="account">
+                <span >{{tips}}</span>
             </div>
             <div class="pass_word">
                 <label for="passWord" class="passWordTip"></label>
-                <input type="password" id="passWord" placeholder="请输入您的密码">
+                <input type="password" id="passWord" placeholder="请输入您的密码" v-model.number="password">
+                <span>{{tips}}</span>
             </div>
-            <button class="loginBtn"><router-link   :to="{name:'index'}">登陆</router-link></button>
-            <button class="resBtn">重置</button>
+            <button class="loginBtn" @click="login">登录</button>
+            <button class="resBtn" @click="reset">重置</button>
+            <!-- <button class="resBtn"><router-link>重置</router-link></button> -->
         </div>
    </div>
 </template>
 
 <script>
-// import axios from 'axios'
-// import { response } from 'express';
+import axios from 'axios'
 export default {
     name:'Denglu',
+    data(){
+        return{
+            account:'',
+            password:'',
+            tips:'',
+        }
+    },
+    methods:{
+        // 登录功能实现
+        login(){
+            axios({
+                method:'post',
+                url:'/api/user/login',
+                data:{
+                    "account": this.account, 
+                    "password": this.password
+                }
+            }).then(res=>{
+                console.log("请求成功",res.data.data)
+                if(res.data.code ===10002){
+                    this.tips = "密码或账号错误"
+                }else if(res.data.code === 10001){
+                    this.tips = "账号和密码不能为空"
+                }
+                // 将服务器返回的数据存入浏览器本地
+                localStorage.setItem("userInfo",JSON.stringify(res.data.data))
+                this.$bus.$emit("userInfo",res.data.data)
+                this.$bus.$emit("send", res.data.data)
+                localStorage.setItem("bool",JSON.stringify(false))
+
+            },err=>{
+                console.log("请求失败",err.message)
+            })
+        },
+        // 
+        reset(){
+            this.account = ''
+            this.password = ''
+            this.tips = ''
+        }
+    }
 }
 </script>
 
@@ -33,6 +76,10 @@ a{
 input{
     font-family: "宋体";
     font-size: 16px;
+}
+span{
+    font-size: 14px;
+    color: red;
 }
 .all{
     position: absolute;
