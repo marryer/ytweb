@@ -36,16 +36,11 @@
             <input type="radio" value="male" name="sex" v-model="sex">男
             <input type="radio" value="female" name="sex" v-model="sex">女
         </div>
-<<<<<<< HEAD
-        <button class="loginBtn">注册</button>
-        <button class="resBtn">重置</button>
-    </from>
-=======
+
     </form>
     <button class="loginBtn" @click="register">注册</button>
     <!-- <button class="resBtn"><router-link :to="{name:'index'}">重置</router-link></button> -->
     <button class="resBtn" @click="resBtn">重置</button>
->>>>>>> 8b33da1a160dcf4809a17f4083fc9d567752fd7f
   </div>
 </template>
 
