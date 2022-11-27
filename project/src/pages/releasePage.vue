@@ -218,10 +218,15 @@ export default {
           "Content-Type": "multipart/form-data",
         },
         data: fd,
-      }).then((res) => {
-        this.form.imageUrl = res.data.data;
-        console.log(this.form.imageUrl);
-      });
+      }).then(
+        (res) => {
+          this.form.imageUrl = res.data.data;
+          console.log(this.form.imageUrl);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
     },
   },
 };

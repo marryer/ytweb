@@ -32,7 +32,7 @@
       <div class="bookImg">书籍封面：</div>
 
       <div class="upload_img">
-        <img :src="form.imageUrl" alt="书籍图片" />
+        <img :src="form.imageUrl" alt="书籍图片" style="width: 100%" />
       </div>
 
       <br />
@@ -249,7 +249,7 @@ export default {
   position: absolute;
   top: 20%;
   left: 130px;
-  width: 200px;
+  width: 150px;
   height: 100px;
   font-size: 12px;
 }
