@@ -21,8 +21,28 @@
 </template>
 
 <script>
+// import axios from 'axios'
   export default {
     name:'SideBar',
+    data(){
+      return{
+        userId:JSON.parse(localStorage.getItem("userInfo")).userId,
+        orderHistroy:{}
+      }
+    },
+    //获取历史订单
+    // mounted(){
+    //   axios({
+    //     method:'post',
+    //     url:'/api/order_history',
+    //     data:{
+    //       "userId":this.userId
+    //     }
+    //   }).then(res=>{
+    //     console.log("获取历史订单",res.data.data)
+    //     this.orderHistroy = res.data.data
+    //   })
+    // },
   }
 </script>
 

@@ -6,50 +6,8 @@
         <p>书名: {{list.bookName}}</p>
         <p>作者: {{list.author}}</p>
         <p style="color:#9a8600">价格: {{list.price}} 元</p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
+        <el-button type="success" plain class="allshow-button" @click="addToCar(list.bookId)">加入书单</el-button>
       </div>
-       <div>
-        <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元</p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
-      </div>
-      <div>
-        <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元</p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
-      </div>
-      <div>
-        <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元</p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
-      </div>
-      <div>
-        <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元</p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
-      </div>
-      <div>
-        <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元</p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
-      </div>
-      <div>
-        <img src="../../img/redmi10A.png" alt="">
-        <h3>书名: {{book.name}}</h3>
-        <p>作者: {{book.author}}</p>
-        <p style="color:#9a8600">价格: {{book.price}} 元</p>
-        <el-button type="success" plain class="allshow-button">加入书单</el-button>
-      </div> -->
     </div>
   </div>
 </template>
@@ -60,25 +18,49 @@ import axios from 'axios'
     name:'Business',
     data(){
       return{
-        book:{
-          name:'计算机网络',
-          author:'谢希仁',
-          price:23
-        },
-        bookList:[]
+        bookList:[],
+        userInfo:{
+          userId:'',
+          username:''
+        }
       }
     },
     mounted(){
       axios.get('http://localhost:8080/api/book').then(
         response=>{
-          console.log("请求成功",response.data.data)
           this.bookList = response.data.data
-        
         },
         error=>{
           alert("请求失败")
         }
       )
+     this.$bus.$on("searchBook",(searchValue)=>{
+      this.bookList = searchValue
+     })
+      this.$bus.$on("sendusername",list=>{
+        this.userInfo.userId = list.userId
+        this.userInfo.username = list.username
+        console.log("business",list.userId)
+      })
+    },
+    methods:{
+      addToCar(bookId){
+       axios({
+        method:'post',
+        url:'/api/shopping_cart/add',
+        data:{
+          "userId":JSON.parse(localStorage.getItem("userInfo")).userId,
+          "bookId":bookId
+        } 
+        // data:{
+        //   "userId":1,
+        //   "bookId":1
+        // }
+       }).then(res=>{
+        // alert("添加成功")
+        console.log(res.data,this.userInfo.userId)
+       })
+      }
     }
   }
 </script>

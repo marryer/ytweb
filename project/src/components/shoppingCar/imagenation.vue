@@ -1,6 +1,6 @@
 <template>
   <div class="imagenation">
-    <input type="checkbox">全选
+    <input type="checkbox" :checked="done" @click="checkAll(done)">全选
     <span class="imagenation-one">商品信息</span>
     <span class="imagenation-two">价格</span>
     <span class="imagenation-three">操作</span>
@@ -10,6 +10,19 @@
 <script>
   export default {
     name:'Imagenation',
+    data(){
+      return{
+        done:false
+      }
+    },
+    methods:{
+      checkAll(done){
+        this.done = !done
+        this.$bus.$emit("sendDone",this.done)
+        this.$bus.$emit("sendremoveDone",this.done)
+        // console.log(",,,,,,,,,,,,",this.done)
+      }
+    }
   }
 </script>
 
@@ -23,7 +36,7 @@
     border: 1px solid rgba(227, 227, 227, 0.863);
     border-top: none;
     border-bottom: none;
-    margin-top: 55px;
+    margin-top: 15px;
     .imagenation-one{
       display: inline-block;
       margin-left: 160px;

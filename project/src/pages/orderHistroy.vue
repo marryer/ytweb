@@ -3,10 +3,12 @@
 </template>
 
 <script>
+import axios from 'axios';
 import list from '../components/shoppingCar/list';
   export default {
     name:'orderHistroy',
-    components:{list}
+    components:{list},
+  
   }
 </script>
 
@@ -16,6 +18,4 @@ import list from '../components/shoppingCar/list';
     top: 120px;
     left: 220px;
   }
-</style>>
-
 </style>

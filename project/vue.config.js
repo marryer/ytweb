@@ -9,6 +9,7 @@ module.exports = defineConfig({
     https: false,
     open: true,
     proxy: {
+      // 能匹配上/api的都走代理
       '/api': {
         // 代理目标的基础路径
         target: 'http://124.221.229.229:8888',
@@ -17,7 +18,6 @@ module.exports = defineConfig({
         // 是否支持跨域
         changeOrigin: true,
         ws: true,
-        changeOrigin: true
       },
     }
   },

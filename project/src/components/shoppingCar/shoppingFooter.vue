@@ -1,22 +1,52 @@
 <template>
   <ul class="shoppingFooter">
-    <li> <el-button type="success" plain>删除</el-button></li>
-    <li>已选商品 {{number}} 件</li>
-    <li>合计：{{allPrice}} 元</li>
-    <li><button>结算</button></li>
+    <li> <el-button type="success" plain @click="removeAll">删除</el-button></li>
+    <li>已选商品 {{0}} 件</li>
+    <li>合计：{{0}} 元</li>
+    <li><button @click="payment(shopping.shoppingId,shopping.bookId)">结算</button></li>
   </ul>
 </template>
 
 <script>
+import axios from 'axios'
   export default {
     name:'ShoppingFooter',
     data(){
       return{
-        number:5,
-        allPrice:54
+        statistical:{},
+        done:false,
+        userId:JSON.parse(localStorage.getItem("userInfo")).userId || '',
+        shopping:JSON.parse(localStorage.getItem("data")).shoppingCarts || []
+      }
+    },
+    methods:{
+      removeAll(){
+        if(this.done){
+          console.log("清除成功")
+        }
+      },
+      payment(shoppingId,bookId){
+        console.log("userid",this.userId)
+        console.log("shopping",this.shopping)
+        axios({
+          method:'post',
+          url:'/api//shopping_cart/payment',
+          data:{
+            "userId": this.userId,
+            "shoppingIds": [shoppingId,bookId]
+          }
+        }).then(res=>{
+          alert("结算成功")
+        })
+      }
+    },
+    mounted(){
+        this.statistical = JSON.parse(localStorage.getItem("data"))
+        this.$bus.$on("sendremoveDone",done=>{
+          this.done = done
+        })
       }
     }
-  }
 </script>
 
 <style scoped lang="less">
