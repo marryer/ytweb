@@ -20,7 +20,6 @@ import axios from 'axios'
       return{
         List:{},
         userId:'',
-        // localBook: JSON.parse(localStorage.getItem("data")).shoppingCarts,
         done:false
       }
     },
