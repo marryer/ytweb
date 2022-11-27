@@ -13,7 +13,7 @@
       <!-- 作者 -->
       <el-form-item label="作者：" :class="bookAuthor">
         <el-input
-          v-model="form.author"
+          v-model="form.bookAuthor"
           placeholder="请输入作者"
           :class="[inputStyle, inputFocus]"
         ></el-input>
@@ -23,7 +23,7 @@
         <el-input-number
           v-model="form.price"
           :min="0"
-          :max="1000"
+          :max="100"
           label="价格"
         ></el-input-number>
       </el-form-item>
@@ -46,30 +46,35 @@
       <br />
       <!-- 年级 -->
       <el-form-item label="书籍所用年级" :class="selectBox">
-        <el-select :multiple="false" :clearable="true" v-model="form.nianji">
+        <el-select
+          :multiple="false"
+          :clearable="true"
+          v-model="form.nianji"
+          value-key="item.value"
+        >
           <el-option
             v-for="item in form.category[0].children[0].children"
-            :value="item.label"
+            :value="item.value"
             :label="item.label"
-            :key="item.label"
+            :key="item.value"
           >
           </el-option>
         </el-select>
       </el-form-item>
+
       <br />
       <!-- 专业 -->
       <el-form-item label="所用专业：" :class="bookSpecialty">
         <el-select
           :multiple="true"
           :clearable="true"
-          :multiple-limit="3"
-          v-model="form.specialty"
+          v-model="form.bookSpecialty"
         >
           <el-option
-            v-for="item in form.category[0].children[1].children"
-            :value="item.value"
-            :label="item.label"
-            :key="item.value"
+            v-for="item in form.bookSpecialty"
+            :value="item.id"
+            :label="item.name"
+            :key="item.id"
           >
           </el-option>
         </el-select>
@@ -78,31 +83,28 @@
       <el-form-item label="书籍详情" :class="tips">
         <el-input
           type="textarea"
-          v-model="form.description"
+          v-model="form.area"
           cols="70"
           rows="3"
         ></el-input>
       </el-form-item>
-      <!-- 表单结束 -->
-      <el-form-item :class="submitBox">
-        <el-button type="success" :class="successBtn" @click="release">
-          立即发布
-        </el-button>
-      </el-form-item>
     </el-form>
   </div>
 </template>
-
-<script>
-import axios from "axios";
+  
+  <script>
 export default {
-  name: "releasePage",
+  name: "releaseHistory",
   data() {
     return {
       form: {
         bookName: "", // 书名
-        author: "", // 书籍作者
+        bookAuthor: "", // 书籍作者
         price: "", // 价格
+        nianji: [], //年级
+        bookSpecialty: [], // 书籍专业
+        area: "",
+        // 书籍分类
         category: [
           {
             label: "书本分类",
@@ -157,12 +159,13 @@ export default {
               },
             ],
           },
-        ], // 书籍分类
-        description: "", // 书籍详情
-        niaji: [], // 年级
-        specialty: [], // 专业
+        ],
+        bookId: "",
+        // 是否删除(默认未删除)
+        isDeleted: 1,
       },
-
+      // 最大专业选择数
+      selectNum: 3,
       box1: "box1",
       fileList: [],
       bookName: "book_name",
@@ -181,49 +184,37 @@ export default {
     };
   },
   // 提交操作
-  mounted() {},
-  methods: {
-    release() {
-      axios({
-        method: "POST",
-        url: "/api/book/add",
-        data: {
-          userId: 1,
-          categoryId: 2,
-          bookName: this.form.bookName,
-          bookUrl: "",
-          author: this.form.author,
-          price: this.form.price,
-          description: this.form.description,
-        },
-      }).then(
-        (response) => {
-          alert(response.data.msg);
-        },
-        (error) => {
-          alert("发布失败", error.msg);
-        }
-      );
-    },
+  mounted() {
+    this.$bus.$on("getBookMsg", (data) => {
+      // 获取书籍的作者
+      this.form.bookAuthor = data.author;
+      // 获取书籍的名字
+      this.form.bookName = data.bookName;
+      // 获取书籍的价格
+      this.form.price = data.price;
+      // 将书籍与专业数据分别存储
+      [this.form.nianji, ...this.form.bookSpecialty] = data.category;
+      // 获取书籍的详情
+      this.form.area = data.description;
+      this.form.bookId = data.bookId;
+      // 获取是否删除信息
+      this.form.isDeleted = data.isDeleted;
+    });
   },
 };
 </script>
-
-<style scoped>
+  
+  <style scoped>
 .box1 {
   position: absolute;
-  margin-top: 20px;
-  margin-left: 350px;
+  margin-top: -600px;
+  margin-left: 300px;
   width: 700px;
   height: 600px;
   /* margin-top: 40px; */
-  background-color: #ededed;
+  background-color: #dee8ce;
   padding-left: 40px;
 }
-/* .box1:hover{
-    border: 1px solid rgba(227, 227, 227, 0.863);
-    box-shadow: 4 4 2px rgba(0, 0, 0, .2);
-} */
 .input_style {
   margin-left: 20px;
   width: 60%;
@@ -284,17 +275,7 @@ export default {
   position: absolute;
   top: 70%;
 }
-.submit_box {
-  position: absolute;
-  left: 33%;
-  bottom: 4%;
-}
-.success_btn {
-  background-color: #67c23a;
-}
-.success_btn:hover {
-  background-color: #67c23a;
-}
+
 .input_focus:focus {
   border: 1px #67c23a;
 }

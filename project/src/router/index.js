@@ -10,6 +10,7 @@ import commodity from '../pages/commodity'
 import release from '../pages/release'
 import releaseList from '../pages/releasedList'
 import releasePage from '../pages/releasePage'
+import releaseHistory from '../pages/releaseHistory'
 import shoppingCar from '../pages/shoppingCar'
 import basicShow from '../pages/basicShow'
 import updatePassword from '../pages/updatePassword'
@@ -72,7 +73,12 @@ export default new VueRouter({
         {
           name: 'releaseList',
           path: 'releaseList',
-          component: releaseList
+          component: releaseList,
+          children: [{
+            name: 'releaseHistory',
+            path: 'releaseHistory',
+            component: releaseHistory,
+          }]
         }
       ]
     },
