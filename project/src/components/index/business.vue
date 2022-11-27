@@ -54,7 +54,6 @@ import axios from 'axios'
         } 
        }).then(res=>{
         return alert("添加成功")
-        // console.log(res.data,this.userInfo.userId)
        })
       }
     }
