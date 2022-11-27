@@ -2,7 +2,7 @@
   <div>
     <logo></logo>
     <!-- 顶部导航条 -->
-    <top></top>
+    <!-- <top></top> -->
     <logo></logo>
     <!-- 侧边栏 -->
     <sideBar/>
@@ -12,7 +12,6 @@
 </template>
 
 <script>
-// import top from './index/top'
 import sideBar from '../components/user/sideBar'
 import basicShow from './basicShow'
 import updatePassword from './updatePassword'
@@ -21,7 +20,7 @@ import orderHistroy from './orderHistroy'
 import logo from '../components/index/logo'
   export default {
     name:'User',
-    components:{sideBar,basicShow,updatePassword,soldOut,orderHistroy,logo}
+    components:{sideBar,basicShow,updatePassword,soldOut,orderHistroy,logo},
   }
 </script>
 

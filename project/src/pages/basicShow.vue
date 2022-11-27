@@ -1,31 +1,42 @@
 <template>
  <ul class="basicShow">
   <li><img src="../img/头像 女孩 (1).png" alt=""></li>
-  <li>{{user.fakeName}}</li>
+  <li>{{user.username}}</li>
   <li> 姓名：{{user.realName}}</li>
-  <li>校内地址：{{user.address}}</li>
+  <li>校内地址：{{user.province}}</li>
   <li>性别：{{user.sex}}</li>
-  <li>QQ：{{user.QQtel}}</li>
-  <li>电话：{{user.tel}}</li>
+  <li>QQ：{{user.qq}}</li>
+  <li>电话：{{user.phone}}</li>
  </ul>
 </template>
 
 <script>
+import axios from 'axios'
   export default {
     name:'BasicShow',
     data(){
       return {
-        user:{
-          fakeName:'不负如来不负卿',
-          realName:'周斯越',
-          sex:'男',
-          address:'花果书院-A6-112',
-          QQtel:2229795409,
-          tel:13629773154,
-        }
+        user:{},
+        userId:JSON.parse(localStorage.getItem("userInfo")).userId
       }
+    },
+    mounted(){
+     axios({
+      method:'post',
+      url:'/api/user/info',
+      data:{
+        "userId": this.userId
+      }
+     }).then(res=>{
+      console.log("basicShow请求成功",res.data.data)
+      this.user = res.data.data
+      if(this.user.sex < 1){
+        this.user.sex = "男"
+      }else if(this.user.sex >= 1){
+        this.user.sex = "女"
+      }
+     })
     }
-
   }
 </script>
 
