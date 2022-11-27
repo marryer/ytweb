@@ -52,13 +52,8 @@ import axios from 'axios'
           "userId":JSON.parse(localStorage.getItem("userInfo")).userId,
           "bookId":bookId
         } 
-        // data:{
-        //   "userId":1,
-        //   "bookId":1
-        // }
        }).then(res=>{
-        // alert("添加成功")
-        console.log(res.data,this.userInfo.userId)
+        return alert("添加成功")
        })
       }
     }
