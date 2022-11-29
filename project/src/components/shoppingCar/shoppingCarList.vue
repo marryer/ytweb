@@ -13,14 +13,12 @@
 </template>
 
 <script>
-//  import { isShallow } from 'vue'
 import HeaderTop from './headerTop'
  import imagenation from './imagenation'
  import list from './list'
   export default {
     name:'ShoppingCarList',
     components:{HeaderTop,list,imagenation},
-    // props:["shoppingCarts","statistical"],
     data(){
       return{
         bookList:{

@@ -7,7 +7,6 @@
    
   ></el-tree>
 </template>
-
 <script>
   export default {
     name:'Classify',

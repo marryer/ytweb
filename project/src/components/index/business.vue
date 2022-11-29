@@ -33,7 +33,7 @@ import axios from 'axios'
           console.log("url",response.data.data)
         },
         error=>{
-          alert("请求失败")
+          return alert("请求失败")
         }
       )
      this.$bus.$on("searchBook",(searchValue)=>{

@@ -20,7 +20,6 @@
         this.done = !done
         this.$bus.$emit("sendDone",this.done)
         this.$bus.$emit("sendremoveDone",this.done)
-        // console.log(",,,,,,,,,,,,",this.done)
       }
     }
   }
