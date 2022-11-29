@@ -28,20 +28,12 @@
         ></el-input-number>
       </el-form-item>
       <br />
-      <!-- 上传书籍照片 -->
+      <!-- 展示书籍照片 -->
       <div class="bookImg">书籍封面：</div>
-      <el-upload
-        :class="uploadImg"
-        drag
-        action="http://124.221.229.229:8888/api/posts/add"
-        multiple
-      >
-        <i class="el-icon-upload"></i>
-        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-        <div :class="elUploadTip" slot="tip">
-          只能上传jpg/png文件，且不超过500kb
-        </div>
-      </el-upload>
+
+      <div class="upload_img">
+        <img :src="form.imageUrl" alt="书籍图片" style="width: 100%" />
+      </div>
 
       <br />
       <!-- 年级 -->
@@ -163,6 +155,7 @@ export default {
         bookId: "",
         // 是否删除(默认未删除)
         isDeleted: 1,
+        imageUrl: "", // 书籍图片
       },
       // 最大专业选择数
       selectNum: 3,
@@ -186,6 +179,7 @@ export default {
   // 提交操作
   mounted() {
     this.$bus.$on("getBookMsg", (data) => {
+      console.log(data);
       // 获取书籍的作者
       this.form.bookAuthor = data.author;
       // 获取书籍的名字
@@ -197,6 +191,8 @@ export default {
       // 获取书籍的详情
       this.form.area = data.description;
       this.form.bookId = data.bookId;
+      // 获取书籍图片地址
+      this.form.imageUrl = data.bookUrl;
       // 获取是否删除信息
       this.form.isDeleted = data.isDeleted;
     });
@@ -251,9 +247,9 @@ export default {
 }
 .upload_img {
   position: absolute;
-  top: 14%;
+  top: 20%;
   left: 130px;
-  width: 200px;
+  width: 150px;
   height: 100px;
   font-size: 12px;
 }

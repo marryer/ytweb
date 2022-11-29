@@ -32,9 +32,10 @@
       <div class="bookImg">书籍封面：</div>
       <el-upload
         :class="uploadImg"
+        action
         drag
-        action="http://124.221.229.229:8888/api/posts/add"
         multiple
+        :http-request="selectPicUpload"
       >
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
@@ -161,6 +162,7 @@ export default {
         description: "", // 书籍详情
         niaji: [], // 年级
         specialty: [], // 专业
+        imageUrl: "", // 书籍图片
       },
 
       box1: "box1",
@@ -188,10 +190,11 @@ export default {
         method: "POST",
         url: "/api/book/add",
         data: {
-          userId: JSON.parse(localStorage.getItem("userInfo")).userId,
+          userId: JSON.parse(localStorage.getItem("userInfo")).userId || "",
           categoryId: 2,
+          categoryIds: [2],
           bookName: this.form.bookName,
-          bookUrl: "",
+          bookUrl: this.form.imageUrl,
           author: this.form.author,
           price: this.form.price,
           description: this.form.description,
@@ -202,6 +205,27 @@ export default {
         },
         (error) => {
           alert("发布失败", error.msg);
+        }
+      );
+    },
+    // 上传图片
+    selectPicUpload(obj) {
+      let fd = new FormData(); //参数的格式是formData格式的
+      fd.append("image", obj.file); //参数
+      axios({
+        method: "POST",
+        url: "/api/upload",
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        data: fd,
+      }).then(
+        (res) => {
+          this.form.imageUrl = res.data.data;
+          console.log(this.form.imageUrl);
+        },
+        (err) => {
+          console.log(err);
         }
       );
     },
