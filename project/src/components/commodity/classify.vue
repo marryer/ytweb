@@ -4,7 +4,7 @@
     :props="defaultProps"
     @node-click="handleNodeClick"
     class="classify"
-    @click="sendToRelPag"
+   
   ></el-tree>
 </template>
 

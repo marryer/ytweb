@@ -2,7 +2,7 @@
   <div>
     <search></search>
     <logo></logo>
-    <ad class="commodity-ad"></ad>
+    <div class="commdity"><ad class="commodity-ad"></ad></div>
     <classify></classify>
     <slideShow></slideShow>
     <business></business>
@@ -22,7 +22,12 @@
   }
 </script>
 <style scoped>
+.commdity{
+  width: 320px;
+  height: 800px;
+  float: right;
+}
 .commodity-ad{
-  top: 100px;
+ top: 100px;
 }
 </style>
