@@ -2,11 +2,11 @@
  <ul class="list">
     <li v-for="list in List.shoppingCarts" :key="list.bookId">
       <label>
-        <input type="checkbox" :checked="done"> 
-        <img src="../../img/redmi10A.png" alt="">
+        <input type="checkbox" :checked="done" @click="selectDone(done,list.price)"> 
+        <img :src="list.bookUrl" alt="">
         <span class="des">书名：{{list.bookName}}；作者：{{list.author}}</span>
         <span class="list-number">{{list.price}}</span>
-        <button class="list-oprate" @click="remove(list.userId,list.bookId)">删除</button>
+        <button class="list-oprate" @click="remove(list.shoppingId)">删除</button>
       </label>
     </li>
  </ul>
@@ -20,25 +20,40 @@ import axios from 'axios'
       return{
         List:{},
         userId:'',
-        done:false
+        done:false,
+        sumPrice:0,
+        count:0,
+      }
+    },
+    watch:{
+      done:{
+        immediate:true,
+        deep:true,
+        handler(newValue,oldValue){
+          console.log("done值发生改变了",newValue,oldValue)
+        }
       }
     },
     methods:{
       // 取消购物车
-      remove(userId,bookId){
-        console.log(userId)
+      remove(shoppingId){
         axios({
           method:'post',
           url:'/api/shopping_cart/delete',
           data:{
-            "shoppingId": [userId,bookId]
+            "shoppingId": [shoppingId]
           }
         }).then(res=>{
-          alert("删除成功")
-          console.log("删除成功",res.data)
+          return  alert("删除成功")
         })
-      
       },
+      selectDone(done,price){
+          console.log("list",price)
+        this.count++
+        this.sumPrice +=price
+        this.$bus.$emit("sendPriceCount",this.count,this.sumPrice)
+        console.log("list,sumPrice",done,this.sumPrice,this.count)
+      }
     },
     mounted(){
       this.userId = JSON.parse(localStorage.getItem("userInfo")).userId  

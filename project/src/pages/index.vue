@@ -7,7 +7,7 @@
         <!-- logo -->
     <logo></logo>
     <!-- 一部分商品展示 -->
-    <business></business>
+    <business class="index-business"></business>
     <!-- 广告栏 -->
     <ad></ad>
     <!-- 查看更多，会跳转到全部商品页面 -->
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 // 引入子组件
 import search from '../components/index/search'
 import login from '../components/index/login'
@@ -35,6 +35,8 @@ import more from '../components/index/more'
   }
 </script>
 
-<style>
-
+<style scoped>
+.index-business{
+  width: 900px;
+}
 </style>

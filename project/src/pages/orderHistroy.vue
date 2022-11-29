@@ -3,7 +3,6 @@
 </template>
 
 <script>
-// import axios from 'axios';
 import list from '../components/shoppingCar/list';
   export default {
     name:'orderHistroy',

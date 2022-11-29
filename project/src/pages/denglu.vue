@@ -13,7 +13,6 @@
             </div>
             <button class="loginBtn" @click="login">登录</button>
             <button class="resBtn" @click="reset">重置</button>
-            <!-- <button class="resBtn"><router-link>重置</router-link></button> -->
         </div>
    </div>
 </template>
@@ -51,7 +50,6 @@ export default {
                 this.$bus.$emit("userInfo",res.data.data)
                 this.$bus.$emit("send", res.data.data)
                 localStorage.setItem("bool",JSON.stringify(false))
-
             },err=>{
                 console.log("请求失败",err.message)
             })

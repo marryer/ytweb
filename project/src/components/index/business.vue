@@ -2,7 +2,8 @@
   <div class="business">
     <div class="business-one">
       <div  v-for="list in bookList" :key="list.bookId">
-        <img src="../../img/redmi10A.png" alt="">
+        <!-- src="../../img/redmi10A.png" -->
+        <img :src="list.bookUrl" alt="">
         <p>书名: {{list.bookName}}</p>
         <p>作者: {{list.author}}</p>
         <p style="color:#9a8600">价格: {{list.price}} 元</p>
@@ -22,16 +23,17 @@ import axios from 'axios'
         userInfo:{
           userId:'',
           username:''
-        }
+        },
       }
     },
     mounted(){
       axios.get('http://localhost:8080/api/book').then(
         response=>{
           this.bookList = response.data.data
+          console.log("url",response.data.data)
         },
         error=>{
-          alert("请求失败")
+          return alert("请求失败")
         }
       )
      this.$bus.$on("searchBook",(searchValue)=>{
@@ -61,7 +63,6 @@ import axios from 'axios'
 </script>
 <style  scoped lang="less"> 
 .business{
-  width: 900px;
     .business-one{
       margin-top: 60px;
       div{

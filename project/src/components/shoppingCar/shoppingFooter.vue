@@ -1,8 +1,8 @@
 <template>
   <ul class="shoppingFooter">
     <li> <el-button type="success" plain @click="removeAll">删除</el-button></li>
-    <li>已选商品 {{0}} 件</li>
-    <li>合计：{{0}} 元</li>
+    <li>已选商品 {{count}} 件</li>
+    <li>合计：{{sumPrice}} 元</li>
     <li><button @click="payment(shopping.shoppingId,shopping.bookId)">结算</button></li>
   </ul>
 </template>
@@ -16,7 +16,9 @@ import axios from 'axios'
         statistical:{},
         done:false,
         userId:JSON.parse(localStorage.getItem("userInfo")).userId || '',
-        shopping:JSON.parse(localStorage.getItem("data")).shoppingCarts || []
+        shopping:JSON.parse(localStorage.getItem("data")).shoppingCarts || [],
+        count:0,
+        sumPrice:0,
       }
     },
     methods:{
@@ -41,12 +43,17 @@ import axios from 'axios'
       }
     },
     mounted(){
-        this.statistical = JSON.parse(localStorage.getItem("data"))
-        this.$bus.$on("sendremoveDone",done=>{
-          this.done = done
-        })
-      }
+      this.statistical = JSON.parse(localStorage.getItem("data"))
+      this.$bus.$on("sendremoveDone",done=>{
+        this.done = done
+      })
+      this.$bus.$on("sendPriceCount",(count,sumPrice)=>{
+        this.count = count
+        this.sumPrice = sumPrice
+        console.log("shoppingFooter",this.count,this.sumPrice)
+      })
     }
+  }
 </script>
 
 <style scoped lang="less">

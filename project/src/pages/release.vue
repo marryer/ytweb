@@ -15,8 +15,6 @@ export default {
     name:'Release',
     components:{
         releaseBtn,
-        // releasedList,
-        // releasePage,
         logo
     },
     data(){

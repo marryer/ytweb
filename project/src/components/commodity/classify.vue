@@ -4,12 +4,10 @@
     :props="defaultProps"
     @node-click="handleNodeClick"
     class="classify"
-    @click="sendToRelPag"
+   
   ></el-tree>
 </template>
-
 <script>
-// import axios from "axios";
   export default {
     name:'Classify',
     data() {

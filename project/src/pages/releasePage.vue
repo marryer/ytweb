@@ -112,19 +112,19 @@ export default {
                 label: "年级",
                 children: [
                   {
-                    label: "2022",
+                    label: "大一",
                     value: 3,
                   },
                   {
-                    label: "2021",
+                    label: "大二",
                     value: 4,
                   },
                   {
-                    label: "2020",
+                    label: "大三",
                     value: 5,
                   },
                   {
-                    label: "2019",
+                    label: "大四",
                     value: 6,
                   },
                 ],
@@ -191,6 +191,7 @@ export default {
         url: "/api/book/add",
         data: {
           userId: JSON.parse(localStorage.getItem("userInfo")).userId || "",
+          categoryId: 2,
           categoryIds: [2],
           bookName: this.form.bookName,
           bookUrl: this.form.imageUrl,
