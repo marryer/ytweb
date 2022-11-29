@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 // 引入子组件
 import search from '../components/index/search'
 import login from '../components/index/login'
