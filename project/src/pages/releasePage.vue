@@ -190,7 +190,7 @@ export default {
         method: "POST",
         url: "/api/book/add",
         data: {
-          userId: 1,
+          userId: JSON.parse(localStorage.getItem("userInfo")).userId || "",
           categoryIds: [2],
           bookName: this.form.bookName,
           bookUrl: this.form.imageUrl,
