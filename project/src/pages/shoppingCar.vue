@@ -28,8 +28,6 @@ import axios from 'axios'
       }
     },
     mounted(){
-      // 路由传参  
-      // this.$route.query.userInfo
       this.userId = JSON.parse(localStorage.getItem("userInfo")).userId  
       axios({
         method:'post',

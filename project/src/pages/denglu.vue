@@ -13,7 +13,6 @@
             </div>
             <button class="loginBtn" @click="login">登录</button>
             <button class="resBtn" @click="reset">重置</button>
-            <!-- <button class="resBtn"><router-link>重置</router-link></button> -->
         </div>
    </div>
 </template>

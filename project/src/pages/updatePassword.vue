@@ -61,7 +61,7 @@ import axios from 'axios';
             "newPwd":this.numberValidateForm.updatePassword
           }
         }).then(res=>{
-          console.log("修改成功")
+           return console.log("修改成功")
         })
         }else{
           alert("修改密码和确认密码必须一致")
