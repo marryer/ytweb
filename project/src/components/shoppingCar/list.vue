@@ -37,7 +37,6 @@ import axios from 'axios'
     methods:{
       // 取消购物车
       remove(shoppingId){
-        // console.log(userId)
         axios({
           method:'post',
           url:'/api/shopping_cart/delete',
